@@ -1,0 +1,17 @@
+@import url(https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css);
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap);
+@import url(bootstrap/dist/css/bootstrap.min.css);
+
+body {
+  font-family: "roboto";
+}
+
+/* #mainnavbar a.nav-link {
+  height: 100%;
+  align-self: flex-end;
+}
+
+#mainnavbar a.nav-link:hover {
+  color: #007bff;
+  border-bottom: #007bff 2px solid;
+} */
