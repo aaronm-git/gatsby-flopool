@@ -1,8 +1,13 @@
 import React from "react";
 import Layout from "../components/layouts/Main";
+import MainCarousel from "../components/Home/MainCarousel";
 
-const index = () => {
-  return <Layout></Layout>;
+const Index = () => {
+  return (
+    <Layout>
+      <MainCarousel />
+    </Layout>
+  );
 };
 
-export default index;
+export default Index;
