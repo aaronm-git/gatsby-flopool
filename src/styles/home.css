@@ -1,0 +1,21 @@
+#keybenefits h4 {
+  min-height: 4rem;
+  color: #343a40;
+}
+
+#keybenefits .copy {
+  position: relative;
+  top: -1.5rem;
+}
+
+@media screen and (max-width: 992px) {
+  #keybenefits h4 {
+    min-height: 5rem;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  #keybenefits h4 {
+    min-height: auto;
+  }
+}

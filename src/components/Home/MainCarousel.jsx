@@ -8,7 +8,7 @@ const MainCarousel = () => {
     <Carousel id="main-carousel">
       <Carousel.Item>
         <StaticImage
-          src="../images/home_slides/best_pool_service_miami.jpg"
+          src="../../images/home_slides/best_pool_service_miami.jpg"
           alt="Miami Florida's Best Pool Service Company"
           loading="eager"
           placeholder="blurred"
@@ -16,7 +16,7 @@ const MainCarousel = () => {
           className="d-none d-lg-block d-xl-none"
         />
         <StaticImage
-          src="../images/home_slides/best_pool_service_miami-lg.jpg"
+          src="../../images/home_slides/best_pool_service_miami-lg.jpg"
           alt="Miami Florida's Best Pool Service Company"
           loading="eager"
           placeholder="blurred"
@@ -24,7 +24,7 @@ const MainCarousel = () => {
           className="d-none d-xl-block"
         />
         <StaticImage
-          src="../images/home_slides/best_pool_service_miami-sm.jpg"
+          src="../../images/home_slides/best_pool_service_miami-sm.jpg"
           alt="Miami Florida's Best Pool Service Company"
           loading="eager"
           placeholder="blurred"
@@ -34,7 +34,7 @@ const MainCarousel = () => {
         <Carousel.Caption>
           <Container>
             <Row>
-              <Col lg={7} xlg={6} className="title">
+              <Col lg={7} xlg={6} className="copy">
                 <h1>Miami's #1 Pool Service Company</h1>
                 <h2>Hire a pool company you can trust</h2>
                 <p>
@@ -57,33 +57,36 @@ const MainCarousel = () => {
 
       <Carousel.Item>
         <StaticImage
-          src="../images/home_slides/swimming_pool_equipment_repair.jpg"
+          src="../../images/home_slides/swimming_pool_equipment_repair.jpg"
           alt="Pool Equipment Installation and Repair"
-          loading="lazy"
+          loading="eager"
           placeholder="blurred"
           layout="fullWidth"
           className="d-none d-lg-block d-xl-none"
+          quality={100}
         />
         <StaticImage
-          src="../images/home_slides/swimming_pool_equipment_repair-lg.jpg"
+          src="../../images/home_slides/swimming_pool_equipment_repair-lg.jpg"
           alt="Pool Equipment Installation and Repair"
-          loading="lazy"
+          loading="eager"
           placeholder="blurred"
           layout="fullWidth"
           className="d-none d-xl-block"
+          quality={100}
         />
         <StaticImage
-          src="../images/home_slides/swimming_pool_equipment_repair-sm.jpg"
+          src="../../images/home_slides/swimming_pool_equipment_repair-sm.jpg"
           alt="Pool Equipment Installation and Repair"
-          loading="lazy"
+          loading="eager"
           placeholder="blurred"
           layout="fullWidth"
           className="d-lg-none"
+          quality={100}
         />
         <Carousel.Caption>
           <Container>
             <Row>
-              <Col lg={6} className="title">
+              <Col lg={6} className="copy">
                 <h1>We'll handle all your pool equipment needs</h1>
                 <p>
                   We install, service and repair all brand-name pool and spa
