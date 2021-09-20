@@ -29,6 +29,7 @@ const Contact = () => {
               quality={100}
               className="d-none d-lg-block"
               alt="Contact Us Today!"
+              placeholder="blurred"
             />
           </Col>
           <Col lg={6}>
