@@ -106,8 +106,8 @@ const Footer = () => {
           FloPool is fully licensed and insured.
         </small>
         <small className="d-block">
-          Master Swimming Pool Maintenance Unlimited Certified Contractor for
-          Mismi Dade and Florida State
+          Master Swimming Pool Maintenance Unlimited - Certified Contractor for
+          Miami Dade and Florida State
         </small>
         <small className="d-block">CC 08P000918 / RP 252555135</small>
       </section>
