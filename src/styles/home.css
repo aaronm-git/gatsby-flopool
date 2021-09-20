@@ -1,3 +1,35 @@
+#maincarousel .carousel-caption {
+  text-align: left;
+  bottom: auto;
+  top: 10%;
+  /* color: black; */
+}
+
+#maincarousel .copy::before {
+  background-color: #007bff;
+  border-radius: 0.25rem;
+  opacity: 0.95;
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transform: scale(1.1);
+  z-index: -1;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+#maincarousel .carousel-caption h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+#maincarousel .carousel-caption h2 {
+  font-size: 1.5rem;
+  font-weight: lighter;
+  color: #ffc107;
+}
+
 #keybenefits h4 {
   min-height: 4rem;
   color: #343a40;
@@ -18,14 +50,63 @@
   background-color: white;
 }
 
+/* md */
 @media screen and (max-width: 992px) {
+  #maincarousel .carousel-caption {
+    top: 0;
+  }
+
+  #maincarousel::after {
+    background-color: black;
+    opacity: 0.6;
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  #maincarousel .copy::before {
+    display: none;
+  }
+
   #keybenefits h4 {
     min-height: 5rem;
   }
 }
 
-@media screen and (max-width: 720px) {
-  #keybenefits h4 {
-    min-height: auto;
+/* md only */
+@media screen and (min-width: 576px) and (max-width: 992px) {
+  #maincarousel .carousel-caption {
+    top: 20%;
+    text-align: center;
+    color: white;
+  }
+}
+
+/* sm */
+@media screen and (max-width: 576px) {
+  #maincarousel .carousel-caption {
+    position: relative;
+    top: 0;
+    left: 0;
+    text-align: center;
+    min-height: 412px;
+    background-color: #007bff;
+  }
+
+  #maincarousel .carousel-indicators {
+    top: 0.5rem;
+  }
+
+  #maincarousel::after {
+    display: none;
+  }
+
+  #maincarousel .carousel-control-prev,
+  #maincarousel .carousel-control-next {
+    align-items: flex-start;
+    margin-top: 25%;
   }
 }
