@@ -6,7 +6,12 @@ import { Link } from "gatsby";
 const Header = () => {
   return (
     <header className="shadow-sm fixed-top">
-      <Navbar expand="lg" variant="light" bg="light">
+      <Navbar
+        expand="lg"
+        variant="light"
+        bg="light"
+        className="d-none d-lg-block"
+      >
         <Container>
           <span>
             Call us today: <a href="tel:3052537665">(305) 253-7665</a> |{" "}

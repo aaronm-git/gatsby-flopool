@@ -13,7 +13,7 @@ const Services = () => {
               src="../../images/home/services-residential.jpg"
               alt="Weekly Pool Service Available For Residential Properties"
               layout="fullWidth"
-              className="position-relative"
+              quality={100}
             />
           </Col>
           <Col md={6} className="px-4 py-5 d-flex align-items-center">
@@ -40,7 +40,7 @@ const Services = () => {
               src="../../images/home/services-commercial.jpg"
               alt="Weekly Pool Service Available For Commercial Properties"
               layout="fullWidth"
-              className="position-relative"
+              quality={100}
             />
           </Col>
           <Col md={6} className="px-4 py-5 d-flex align-items-center">

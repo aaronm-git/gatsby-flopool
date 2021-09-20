@@ -5,7 +5,7 @@ import { Link } from "gatsby";
 
 const MainCarousel = () => {
   return (
-    <Carousel id="main-carousel">
+    <Carousel id="maincarousel">
       <Carousel.Item>
         <StaticImage
           src="../../images/home_slides/best_pool_service_miami.jpg"
