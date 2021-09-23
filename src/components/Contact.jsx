@@ -7,7 +7,8 @@ import { TelephoneFill } from "react-bootstrap-icons";
 import "../styles/contact-section.css";
 import Helmet from "react-helmet";
 
-const Contact = () => {
+const Contact = ({ reversed }) => {
+  const rowReversed = reversed ? "flex-lg-row-reverse" : null;
   const [state, handleSubmit] = useForm("contact");
   return (
     <section id="contactform" className="subsection bg-light">
@@ -32,7 +33,7 @@ const Contact = () => {
             solutions today.
           </p>
         </div>
-        <Row className="">
+        <Row className={rowReversed}>
           <Col lg={6} className="position-relative">
             <StaticImage
               src="../images/contact-us.jpg"
