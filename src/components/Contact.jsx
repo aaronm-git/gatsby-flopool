@@ -10,7 +10,7 @@ import Helmet from "react-helmet";
 const Contact = () => {
   const [state, handleSubmit] = useForm("contact");
   return (
-    <section id="contactform" className="subsection">
+    <section id="contactform" className="subsection bg-light">
       <Helmet>
         <script
           src="https://www.google.com/recaptcha/api.js"

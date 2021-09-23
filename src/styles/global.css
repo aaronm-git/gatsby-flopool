@@ -40,16 +40,63 @@ a svg {
   margin-bottom: 4px;
 }
 
+.hero {
+  position: relative;
+}
+
+.hero::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+}
+
 /* md */
-@media screen and (min-width: 576px) and (max-width: 992px) {
+@media screen and (max-width: 992px) {
   #main {
     margin-top: 85px;
   }
+
+  .hero h1 {
+    /* font-size: medium; */
+    width: 60%;
+  }
+
+  #footer img {
+    width: 200px;
+  }
+}
+
+/* md only */
+@media screen and (min-width: 576px) and (max-width: 992px) {
 }
 
 /* sm */
 @media screen and (max-width: 576px) {
+  #mainnavbar .navbar-brand {
+    width: 200px;
+  }
+
   #main {
-    margin-top: 85px;
+    margin-top: 75px;
+  }
+
+  .hero h1 {
+    font-size: large;
+    width: 75%;
   }
 }
