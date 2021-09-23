@@ -28,7 +28,10 @@ const Services = () => {
                 will do all the cleaning and maintance so you can focus on
                 enjoying your swimming pool!
               </p>
-              <Link to="/services" className="btn btn-lg btn-primary">
+              <Link
+                to="/services/residential"
+                className="btn btn-lg btn-primary"
+              >
                 Residential Services
               </Link>
             </div>
@@ -58,7 +61,10 @@ const Services = () => {
                 count on FloPool to always provide you the best pool service in
                 Miami, Florida.
               </p>
-              <Link to="/services" className="btn btn-lg btn-primary">
+              <Link
+                to="/services/commercial"
+                className="btn btn-lg btn-primary"
+              >
                 Commercial Services
               </Link>
             </div>
