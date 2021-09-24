@@ -27,7 +27,13 @@ body {
   padding-bottom: 1rem;
   border-top: 2px #ffc107 solid;
   border-bottom: 2px #ffc107 solid;
-  padding-bottom: 1rem;
+}
+
+.subtitle {
+  color: #007bff;
+  border-bottom: 1px #ffc107 solid;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
 #main {

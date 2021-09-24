@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Nav, Container } from "react-bootstrap";
+import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
 import { StaticImage } from "gatsby-plugin-image";
 import { Link } from "gatsby";
 
@@ -43,11 +43,25 @@ const Header = () => {
                 Home
               </Link>
               <Link to="/about" className="nav-link">
-                About
+                About Us
               </Link>
-              <Link to="/services" className="nav-link">
-                Pool Services
-              </Link>
+              <NavDropdown title="Services" id="collasible-nav-dropdown">
+                <Link className="dropdown-item" to="/services/residential">
+                  Residential Pool Service
+                </Link>
+                <Link className="dropdown-item" to="/services/commercial">
+                  Commercial Pool Service
+                </Link>
+                <Link className="dropdown-item" to="/services/repair">
+                  Pool Equipment Repair
+                </Link>
+                <Link className="dropdown-item" to="/services/leak-detection">
+                  Leak Detection
+                </Link>
+                <Link className="dropdown-item" to="/services/remodeling">
+                  Pool and Deck Remodeling
+                </Link>
+              </NavDropdown>
               <Link to="/contact-us" className="nav-link">
                 Contact Us
               </Link>
