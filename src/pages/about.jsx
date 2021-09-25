@@ -19,8 +19,8 @@ const About = () => {
     <Layout>
       <section className="hero">
         <StaticImage
-          src="../images/about-us/hero.jpg"
-          alt="Learn more about FloPool"
+          src="../images/about-us/hero-about-us.jpg"
+          alt="Learn more about FloPool and why we're the best pool service in Miami, Florida"
           layout="fullWidth"
         />
         <h1 className="title">About Our Company</h1>
