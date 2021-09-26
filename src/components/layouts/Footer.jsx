@@ -101,7 +101,7 @@ const Footer = () => {
           </Row>
         </Container>
       </section>
-      <section className="bg-primary py-2 text-center">
+      <section className="bg-warning text-dark py-2 text-center">
         <small className="d-block">
           FloPool is fully licensed and insured.
         </small>
@@ -122,7 +122,8 @@ const Footer = () => {
           </small>
           <br />
           <small>
-            Designed by <a href="www.aaronmolina.me">www.aaronmolina.me</a>
+            Designed by{" "}
+            <a href="https://www.aaronmolina.me">www.aaronmolina.me</a>
           </small>
         </Container>
       </section>
