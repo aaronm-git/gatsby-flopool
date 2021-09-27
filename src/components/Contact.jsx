@@ -238,38 +238,3 @@ const Contact = ({ reversed }) => {
 };
 
 export default Contact;
-
-{
-  /* <Row>
-      <Col md={12}>
-        <Card className="mb-2">
-          <Card.Body>
-            <Card.Title>
-              <GeoAltFill className="circled" />
-              Our Address
-            </Card.Title>
-          </Card.Body>
-        </Card>
-      </Col>
-      <Col md={6}>
-        <Card className="mb-2">
-          <Card.Body>
-            <Card.Title>
-              <TelephoneFill className="circled" />
-              Phone
-            </Card.Title>
-          </Card.Body>
-        </Card>
-      </Col>
-      <Col md={6}>
-        <Card className="mb-2">
-          <Card.Body>
-            <Card.Title>
-              <EnvelopeFill />
-              Email
-            </Card.Title>
-          </Card.Body>
-        </Card>
-      </Col>
-    </Row> */
-}
