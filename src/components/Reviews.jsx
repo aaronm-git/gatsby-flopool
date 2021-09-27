@@ -24,10 +24,10 @@ const Reviews = () => {
       render={(data) => {
         const reviews = data.allContentfulReviews.nodes;
         return (
-          <section className="subsection">
-            <Container>
+          <section className="subsection bg-primary text-white">
+            <Container fluid>
               <div className="text-center">
-                <h2 className="title text-primary">
+                <h2 className="title">
                   <span className="d-none d-md-inline">⭐️ ⭐️ </span>⭐️
                   Testimonials ⭐️
                   <span className="d-none d-md-inline"> ⭐️ ⭐️</span>
@@ -47,12 +47,9 @@ const Reviews = () => {
 
                   return (
                     <Carousel.Item key={review.id}>
-                      <Row
-                        style={{ minHeight: "400px" }}
-                        className="align-items-center"
-                      >
+                      <Row style={{ minHeight: "350px" }} className="">
                         <Col md={{ span: 8, offset: 2 }}>
-                          <Card className="shadow">
+                          <Card className="shadow text-dark">
                             <Card.Body>
                               <h5>{review.name}</h5>
                               <p>{stars}</p>
