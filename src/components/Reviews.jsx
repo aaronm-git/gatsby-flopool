@@ -42,7 +42,11 @@ const Reviews = () => {
                 {reviews.map((review) => {
                   const stars = [];
                   for (let index = 0; index < review.rating; index++) {
-                    stars.push(<span className="mr-2">⭐️</span>);
+                    stars.push(
+                      <span className="mr-2" key={"rating_" + index}>
+                        ⭐️
+                      </span>
+                    );
                   }
 
                   return (

@@ -27,7 +27,7 @@ const Residential = () => {
               <StaticImage
                 src="../../images/services/weekly-pool-service.jpg"
                 alt="FloPool provides weekly pool service to residential pool owners in Miami, Florida"
-                className="rounded shadow"
+                className="rounded shadow mb-4"
                 height={450}
               />
             </Col>

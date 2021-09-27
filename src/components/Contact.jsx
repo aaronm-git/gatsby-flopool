@@ -34,13 +34,14 @@ const Contact = ({ reversed }) => {
           </p>
         </div>
         <Row className={rowReversed}>
-          <Col lg={6} className="position-relative">
+          <Col lg={6} className="position-relative text-center">
             <StaticImage
               src="../images/contact-us.jpg"
               alt="Contact Us Today!"
               placeholder="blurred"
               className="rounded shadow-sm mb-4"
-              layout="fullWidth"
+              layout="constrained"
+              height={800}
               quality={100}
             />
             <div
@@ -73,7 +74,9 @@ const Contact = ({ reversed }) => {
               <h5 className="text-center">Thank you for reaching out!</h5>
             ) : (
               <Form onSubmit={handleSubmit}>
-                <h3 className="text-center text-uppercase">Request A Quote</h3>
+                <h4 className="text-center text-uppercase subtitle">
+                  Request A Quote
+                </h4>
                 <Form.Group controlId="formName">
                   <Form.Label>
                     Name<span className="text-danger">*</span>
