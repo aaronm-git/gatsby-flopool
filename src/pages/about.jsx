@@ -3,7 +3,7 @@ import Layout from "../components/layouts/Main";
 import { Container, Row, Col } from "react-bootstrap";
 import { StaticImage } from "gatsby-plugin-image";
 import { TelephoneFill } from "react-bootstrap-icons";
-import Contact from "../components/Contact";
+import ContactNetlify from "../components/ContactNetlify";
 
 const bottomOverlayStyle = {
   position: "absolute",
@@ -22,12 +22,13 @@ const About = () => {
           src="../images/about-us/hero-about-us.jpg"
           alt="Learn more about FloPool and why we're the best pool service in Miami, Florida"
           layout="fullWidth"
+          loading="eager"
         />
         <h1 className="title">About Our Company</h1>
       </section>
       <section id="aboutcompany" className="subsection">
         <Container>
-          <Row className="flex-lg-row-reverse">
+          <Row className="flex-lg-row-reverse align-items-center">
             <Col md={6}>
               <h2 className="subtitle">Who We Are</h2>
               <p>
@@ -134,7 +135,7 @@ const About = () => {
           </Row>
         </Container>
       </section>
-      <Contact reversed />
+      <ContactNetlify reversed />
     </Layout>
   );
 };

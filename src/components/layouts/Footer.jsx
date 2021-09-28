@@ -10,22 +10,26 @@ const Footer = () => {
     <footer id="footer" className="text-light">
       <section className="bg-dark subsection">
         <Container>
+          <Link to="/">
+            <StaticImage
+              src="../../images/flopool-logo-white.png"
+              alt="FloPool - The best pool service company in Miami, Florida"
+              placeholder="tracedSVG"
+              width={200}
+              className="mb-2"
+            />
+          </Link>
           <Row className="justify-content-between">
             <Col md={3}>
-              <Link to="/">
-                <StaticImage
-                  src="../../images/flopool-logo-white.png"
-                  alt="FloPool - The best pool service company in Miami, Florida"
-                  placeholder="tracedSVG"
-                />
-              </Link>
-              <ul className="mt-2 border-top border-warning pt-2">
+              <h5 className="subtitle text-white">Contact Us</h5>
+              <ul className="">
                 <li>Florida Swimming Pools LLC.</li>
                 <li>13301 SW 97th St.</li>
                 <li>Suite #118</li>
                 <li>Miami, Florida 33186</li>
               </ul>
-              <ul className="mt-2 border-top border-warning py-2">
+              <hr className="bg-warning" />
+              <ul className="">
                 <h5>Miami, FL. Office</h5>
                 <li>Mon-Sat: 8:30 AM – 6 PM</li>
                 <li>Sunday: 10 AM – 4 PM</li>
@@ -44,9 +48,7 @@ const Footer = () => {
               </ul>
             </Col>
             <Col md={3}>
-              <h5 className="border-bottom border-warning pb-2">
-                Useful Links
-              </h5>
+              <h5 className="subtitle text-white">Useful Links</h5>
               <ul className="ul-links">
                 <li>
                   <Link to="/">Home</Link>
@@ -60,14 +62,20 @@ const Footer = () => {
                 <li>
                   <Link to="/contact-us">Contact Us</Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link to="/blog">Blog</Link>
-                </li>
+                </li> */}
                 <li>
                   <Link to="/get-a-quote">Get a quote</Link>
                 </li>
                 <li>
-                  <Link to="/make-a-payment">Make a Payment</Link>
+                  <a
+                    href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=C6QC2BSJC9DY2"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Make a Payment
+                  </a>
                 </li>
                 <li>
                   <Link to="/jobs">We're Hiring!</Link>
@@ -75,7 +83,7 @@ const Footer = () => {
               </ul>
             </Col>
             <Col md={3}>
-              <h5 className="border-bottom border-warning pb-2">Services</h5>
+              <h5 className="subtitle text-white">Services</h5>
               <ul className="ul-links">
                 <li>
                   <Link to="/services/residential">

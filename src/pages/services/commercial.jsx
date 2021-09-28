@@ -3,7 +3,7 @@ import Layout from "../../components/layouts/Main";
 import { Container, Row, Col } from "react-bootstrap";
 import { StaticImage } from "gatsby-plugin-image";
 import PoolServiceSection from "../../components/PoolServiceSection";
-import Contact from "../../components/Contact";
+import ContactNetlify from "../../components/ContactNetlify";
 const Commercial = () => {
   return (
     <Layout>
@@ -12,6 +12,7 @@ const Commercial = () => {
           src="../../images/services/hero-commercial.jpg"
           alt="FloPool provides the best commercial pool services in Miami, Florida"
           layout="fullWidth"
+          loading="eager"
         />
         <h1 className="title">Commercial Pool Service</h1>
       </section>
@@ -57,7 +58,7 @@ const Commercial = () => {
           </Row>
         </Container>
       </section>
-      <Contact reversed />
+      <ContactNetlify reversed />
     </Layout>
   );
 };

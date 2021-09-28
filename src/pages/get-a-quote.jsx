@@ -1,11 +1,11 @@
 import React from "react";
 import Layout from "../components/layouts/Main";
-import Contact from "../components/Contact";
+import ContactNetlify from "../components/ContactNetlify";
 import Reviews from "../components/Reviews";
 const GetAQuote = () => {
   return (
     <Layout>
-      <Contact />
+      <ContactNetlify />
       <Reviews />
     </Layout>
   );

@@ -16,7 +16,13 @@ const Header = () => {
           <span>
             Call us today: <a href="tel:3052537665">(305) 253-7665</a> |{" "}
             <Link to="/get-a-quote">Get A Quote</Link> |{" "}
-            <Link to="/make-a-payment">Make A Payment</Link>
+            <a
+              href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=C6QC2BSJC9DY2"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Make a Payment
+            </a>
           </span>
           <span className="ml-lg-auto">
             Email Customer Service:{" "}
@@ -65,9 +71,9 @@ const Header = () => {
               <Link to="/contact-us" className="nav-link">
                 Contact Us
               </Link>
-              <Link to="/blog" className="nav-link">
+              {/* <Link to="/blog" className="nav-link">
                 Blog
-              </Link>
+              </Link> */}
               <div className="ml-lg-3">
                 <Link
                   to="/get-a-quote"

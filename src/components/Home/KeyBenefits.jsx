@@ -18,13 +18,13 @@ const KeyBenefits = () => {
             />
             <div className="copy">
               <h4 className="title">Pool Cleaning & Maintenance</h4>
-              <p>
-                South Florida residents, condos, and homeowners associations
-                have many options when it comes to choosing a pool service
-                company in Miami. When it is experience and reliability that
-                counts, you can trust Florida Swimming Pools LLC; for all your
-                pool services needs. We provide top-quality pool cleaning,
-                maintenance, and repair services throughout Miami, Florida.
+              <p className="text-justify">
+                South Florida residents, condos, and homeowner associations have
+                many options when it comes to choosing a pool service company in
+                Miami. When it is experience and reliability that counts, you
+                can trust FloPool for all your pool services needs. We provide
+                top-quality pool cleaning, maintenance, and repair services
+                throughout Miami, Florida.
               </p>
             </div>
           </Col>
@@ -38,7 +38,7 @@ const KeyBenefits = () => {
             />
             <div className="copy">
               <h4 className="title">Pool Equipement Installation & Repair</h4>
-              <p>
+              <p className="text-justify">
                 FloPool provides leak detection service, repairs, and equipment
                 installations for any type of pool, whether commercial or
                 residential. Our repair technicians are certified to repair and
@@ -59,7 +59,7 @@ const KeyBenefits = () => {
             />
             <div className="copy">
               <h4 className="title">Licensed & Insured Company</h4>
-              <p>
+              <p className="text-justify">
                 Florida Swimming Pools LLC. is fully licensed and insured with
                 over 15 years of industry experience. All our professional
                 technicians are Certified Pool & Spa Operator® (CPO®) required

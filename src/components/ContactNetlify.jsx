@@ -1,24 +1,52 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { StaticImage } from "gatsby-plugin-image";
-import { useForm, ValidationError } from "@formspree/react";
 import States from "../states";
 import { TelephoneFill } from "react-bootstrap-icons";
 import "../styles/contact-section.css";
-import Helmet from "react-helmet";
 
-const Contact = ({ reversed }) => {
+function encode(data) {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+}
+
+const ContactNetlify = ({ reversed }) => {
+  const [succeeded, setSucceeded] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [state, setState] = useState({});
+
+  const handleChange = (e) => {
+    setState({ ...state, [e.target.name]: e.target.value });
+  };
+
   const rowReversed = reversed ? "flex-lg-row-reverse" : null;
-  const [state, handleSubmit] = useForm("contact");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSubmitting(true);
+    const form = e.target;
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": form.getAttribute("name"),
+        ...state,
+      }),
+    })
+      .then(() => {
+        setSucceeded(true);
+        setSubmitting(false);
+      })
+      .catch((error) => {
+        alert(error);
+        setSucceeded(false);
+        setSubmitting(false);
+      });
+  };
+
   return (
-    <section id="contactform" className="subsection bg-light">
-      <Helmet>
-        <script
-          src="https://www.google.com/recaptcha/api.js"
-          async
-          defer
-        ></script>
-      </Helmet>
+    <section id="contactformnetlify" className="subsection bg-light">
       <Container>
         <div className="text-center mb-2">
           <h2 className="text-primary">
@@ -37,12 +65,12 @@ const Contact = ({ reversed }) => {
           <Col lg={6} className="position-relative text-center">
             <StaticImage
               src="../images/contact-us.jpg"
-              alt="Contact Us Today!"
+              alt="Contact us today!"
               placeholder="blurred"
-              className="rounded shadow-sm mb-4"
               layout="constrained"
               height={800}
               quality={100}
+              className="rounded shadow"
             />
             <div
               className="text-center w-75"
@@ -70,10 +98,18 @@ const Contact = ({ reversed }) => {
             </div>
           </Col>
           <Col lg={6}>
-            {state.succeeded ? (
+            {succeeded ? (
               <h5 className="text-center">Thank you for reaching out!</h5>
             ) : (
-              <Form onSubmit={handleSubmit}>
+              <Form
+                onSubmit={handleSubmit}
+                name="contact"
+                method="post"
+                data-netlify={true}
+                data-netlify-honeypot="bot-field"
+              >
+                <input type="hidden" name="form-name" value="contact" />
+                <input name="bot-field" type="hidden" onChange={handleChange} />
                 <h4 className="text-center text-uppercase subtitle">
                   Request A Quote
                 </h4>
@@ -81,15 +117,15 @@ const Contact = ({ reversed }) => {
                   <Form.Label>
                     Name<span className="text-danger">*</span>
                   </Form.Label>
-                  <Form.Control placeholder="John Doe" name="name" required />
-                  <ValidationError
-                    prefix="Name"
-                    field="name"
-                    errors={state.errors}
+                  <Form.Control
+                    placeholder="John Doe"
+                    name="name"
+                    required
+                    onChange={handleChange}
                   />
                 </Form.Group>
                 <Row>
-                  <Form.Group as={Col} controlId="formPhone" required>
+                  <Form.Group as={Col} controlId="formPhone">
                     <Form.Label>
                       Phone<span className="text-danger">*</span>
                     </Form.Label>
@@ -97,41 +133,34 @@ const Contact = ({ reversed }) => {
                       type="tel"
                       placeholder="Enter phone"
                       name="phone"
-                    />
-                    <ValidationError
-                      prefix="Phone"
-                      field="phone"
-                      errors={state.errors}
+                      required
+                      onChange={handleChange}
                     />
                   </Form.Group>
                   <Form.Group as={Col} controlId="formEmail">
-                    <Form.Label>Email</Form.Label>
+                    <Form.Label>
+                      Email<span className="text-danger">*</span>
+                    </Form.Label>
                     <Form.Control
                       type="email"
                       placeholder="Enter email"
                       name="email"
-                    />
-                    <ValidationError
-                      prefix="Email"
-                      field="email"
-                      errors={state.errors}
+                      required
+                      onChange={handleChange}
                     />
                   </Form.Group>
                 </Row>
-                <h5>Property Location</h5>
+                <h5 className="mb-0 mt-3">Property Location</h5>
+                <p className="text-muted">Where you wish to receive service</p>
                 <Form.Group className="mb-3" controlId="formAddress">
                   <Form.Label>
                     Address<span className="text-danger">*</span>
                   </Form.Label>
                   <Form.Control
                     placeholder="1234 Main St"
-                    required
                     name="address"
-                  />
-                  <ValidationError
-                    prefix="Address"
-                    field="address"
-                    errors={state.errors}
+                    required
+                    onChange={handleChange}
                   />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formAddress2">
@@ -139,11 +168,7 @@ const Contact = ({ reversed }) => {
                   <Form.Control
                     placeholder="Apartment, studio, or floor"
                     name="address2"
-                  />
-                  <ValidationError
-                    prefix="Address2"
-                    field="address"
-                    errors={state.errors}
+                    onChange={handleChange}
                   />
                 </Form.Group>
                 <Row className="mb-3">
@@ -151,14 +176,15 @@ const Contact = ({ reversed }) => {
                     <Form.Label>
                       City<span className="text-danger">*</span>
                     </Form.Label>
-                    <Form.Control required name="city" placeholder="Miami" />
-                    <ValidationError
-                      prefix="City"
-                      field="city"
-                      errors={state.errors}
+                    <Form.Control
+                      required
+                      name="city"
+                      placeholder="Miami"
+                      required
+                      onChange={handleChange}
                     />
                   </Form.Group>
-                  <Form.Group as={Col} controlId="formCity">
+                  <Form.Group as={Col} controlId="formState">
                     <Form.Label>
                       State<span className="text-danger">*</span>
                     </Form.Label>
@@ -168,6 +194,8 @@ const Contact = ({ reversed }) => {
                       required
                       name="state"
                       defaultValue="FL"
+                      required
+                      onChange={handleChange}
                     >
                       {States.map((usStates) => {
                         return (
@@ -180,11 +208,6 @@ const Contact = ({ reversed }) => {
                         );
                       })}
                     </Form.Control>
-                    <ValidationError
-                      prefix="State"
-                      field="state"
-                      errors={state.errors}
-                    />
                   </Form.Group>
                   <Form.Group as={Col} controlId="formZip">
                     <Form.Label>
@@ -195,14 +218,32 @@ const Contact = ({ reversed }) => {
                       required
                       name="zip"
                       placeholder="33186"
-                    />
-                    <ValidationError
-                      prefix="Zip"
-                      field="zip"
-                      errors={state.errors}
+                      required
+                      onChange={handleChange}
                     />
                   </Form.Group>
                 </Row>
+                <Form.Group controlId="formType">
+                  <Form.Label>
+                    Type of Service<span className="text-danger">*</span>
+                  </Form.Label>
+                  <Form.Control
+                    as="select"
+                    required
+                    name="serviceType"
+                    defaultValue="Weekly pool service"
+                    required
+                    onChange={handleChange}
+                  >
+                    <option>Weekly pool service</option>
+                    <option>Pool equipment repair</option>
+                    <option>Leak detection</option>
+                    <option>Pool or deck remodeling</option>
+                    <option>Green pool restoration</option>
+                    <option>Other</option>
+                  </Form.Control>
+                </Form.Group>
+
                 <Form.Group controlId="formMessage">
                   <Form.Label>
                     Message<span className="text-danger">*</span>
@@ -213,22 +254,14 @@ const Contact = ({ reversed }) => {
                     style={{ height: "100px" }}
                     name="message"
                     required
-                  />
-                  <ValidationError
-                    prefix="Message"
-                    field="message"
-                    errors={state.errors}
+                    onChange={handleChange}
                   />
                 </Form.Group>
-                <div
-                  className="g-recaptcha mb-3"
-                  data-sitekey={process.env.RECAPTCHA_SITE_KEY}
-                ></div>
                 <Button
                   variant="primary"
                   type="submit"
                   size="lg"
-                  disabled={state.submitting}
+                  disabled={submitting}
                 >
                   Request A Callback
                 </Button>
@@ -241,4 +274,4 @@ const Contact = ({ reversed }) => {
   );
 };
 
-export default Contact;
+export default ContactNetlify;
