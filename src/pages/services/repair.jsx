@@ -17,9 +17,9 @@ const Repair = () => {
       </section>
       <section className="subsection">
         <Container>
-          <Row className="align-items-center">
+          <Row>
             <Col md={6}>
-              <h2 className="subtitle">
+              <h2 className="subtitle text-primary">
                 We repair and install all name brand pool equipment.
               </h2>
               <p>

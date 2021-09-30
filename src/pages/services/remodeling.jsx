@@ -17,20 +17,19 @@ const Remodeling = () => {
       </section>
       <section className="subsection">
         <Container>
-          <h2 className="title text-center">
-            New pool construction and pool and deck remodeling
-          </h2>
-          <Row className="align-items-center">
+          <Row>
             <Col md={6} className="text-center">
               <StaticImage
                 src="../../images/services/pool-remodeling.jpg"
                 alt="FloPool provides weekly pool service to residential pool owners in Miami, Florida"
-                className="rounded shadow mb-4"
                 height={450}
+                className="rounded shadow mb-4"
               />
             </Col>
             <Col md={6}>
-              <h4 className="subtitle">Pool and Deck Remodeling Services </h4>
+              <h4 className="subtitle text-primary">
+                Pool and Deck Remodeling Services{" "}
+              </h4>
               <p>
                 Is your pool looking old and in need of a facelift, or perhaps
                 you just purchase a new home and have some renovation plans for
@@ -40,7 +39,9 @@ const Remodeling = () => {
                 Technological advance in pool design and equipment has made
                 swimming pool ownership more enjoyable, less expensive.
               </p>
-              <h4 className="subtitle">Swimming Pool Construction</h4>
+              <h4 className="subtitle text-primary">
+                Swimming Pool Construction
+              </h4>
               <p>
                 Here in sunny south Florida, we understand the benefit of owning
                 a swimming pool. It's a great relaxation spot, brngs family

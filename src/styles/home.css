@@ -1,38 +1,23 @@
 #maincarousel .carousel-caption {
-  text-align: left;
+  text-align: center;
   bottom: auto;
   top: 10%;
-  /* color: black; */
-}
-
-#maincarousel .copy::before {
+  width: 40%;
   background-color: #007bff;
+  padding: 1rem;
   border-radius: 0.25rem;
-  opacity: 0.95;
-  content: "";
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  transform: scale(1.1);
-  z-index: -1;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
 }
 
-#maincarousel .carousel-caption h1 {
-  font-size: 2rem;
-  font-weight: bold;
+#maincarousel .carousel-caption h2 {
   text-transform: uppercase;
+  font-size: 2rem;
 }
 
-#maincarousel .carousel-caption h2 {
+#maincarousel .carousel-caption h3 {
   font-size: 1.5rem;
   font-weight: lighter;
   color: #ffc107;
-}
-
-#keybenefits h4 {
-  min-height: 4rem;
-  color: #343a40;
 }
 
 #keybenefits .copy {
@@ -53,60 +38,31 @@
 /* md */
 @media screen and (max-width: 992px) {
   #maincarousel .carousel-caption {
-    top: 0;
-  }
-
-  #maincarousel::after {
-    background-color: black;
-    opacity: 0.6;
-    content: "";
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-
-  #maincarousel .copy::before {
-    display: none;
-  }
-
-  #keybenefits h4 {
-    min-height: 5rem;
-  }
-}
-
-/* md only */
-@media screen and (min-width: 576px) and (max-width: 992px) {
-  #maincarousel .carousel-caption {
-    top: 20%;
-    text-align: center;
-    color: white;
-  }
-}
-
-/* sm */
-@media screen and (max-width: 576px) {
-  #maincarousel .carousel-caption {
     position: relative;
     top: 0;
     left: 0;
+    width: 100%;
     text-align: center;
-    min-height: 412px;
-    background-color: #007bff;
-  }
-
-  #maincarousel .carousel-indicators {
-    top: 0.5rem;
-  }
-
-  #maincarousel::after {
-    display: none;
+    min-height: 400px;
+    padding: 1rem 0.5rem;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
   }
 
   #maincarousel .carousel-control-prev,
   #maincarousel .carousel-control-next {
     align-items: flex-start;
-    margin-top: 25%;
+    margin-top: 20%;
+  }
+
+  #maincarousel .carousel-caption h3 {
+    font-size: 22px;
+    font-weight: lighter;
+    color: #ffc107;
   }
 }
+
+/* sm */
+/* @media screen and (max-width: 576px) {
+} */

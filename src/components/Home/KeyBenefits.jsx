@@ -6,7 +6,9 @@ const KeyBenefits = () => {
   return (
     <section id="keybenefits" className="subsection text-center">
       <Container>
-        <h2>Reliable Swimming Pool Service & Repairs in Miami, Fl.</h2>
+        <h1 className="title">
+          We are the BEST pool service company in Miami, FL
+        </h1>
         <Row>
           <Col md={4}>
             <StaticImage
@@ -17,8 +19,10 @@ const KeyBenefits = () => {
               placeholder="tracedSVG"
             />
             <div className="copy">
-              <h4 className="title">Pool Cleaning & Maintenance</h4>
-              <p className="text-justify">
+              <h4 className="subtitle text-primary">
+                Pool Cleaning & Maintenance
+              </h4>
+              <p>
                 South Florida residents, condos, and homeowner associations have
                 many options when it comes to choosing a pool service company in
                 Miami. When it is experience and reliability that counts, you
@@ -37,8 +41,10 @@ const KeyBenefits = () => {
               placeholder="tracedSVG"
             />
             <div className="copy">
-              <h4 className="title">Pool Equipement Installation & Repair</h4>
-              <p className="text-justify">
+              <h4 className="subtitle text-primary">
+                Pool Equipement Installation & Repair
+              </h4>
+              <p>
                 FloPool provides leak detection service, repairs, and equipment
                 installations for any type of pool, whether commercial or
                 residential. Our repair technicians are certified to repair and
@@ -58,8 +64,10 @@ const KeyBenefits = () => {
               placeholder="tracedSVG"
             />
             <div className="copy">
-              <h4 className="title">Licensed & Insured Company</h4>
-              <p className="text-justify">
+              <h4 className="subtitle text-primary">
+                Licensed & Insured Company
+              </h4>
+              <p>
                 Florida Swimming Pools LLC. is fully licensed and insured with
                 over 15 years of industry experience. All our professional
                 technicians are Certified Pool & Spa Operator® (CPO®) required

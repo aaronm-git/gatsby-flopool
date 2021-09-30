@@ -28,18 +28,18 @@ const ContactUs = () => {
       </section>
       <section id="aboutcompany" className="subsection">
         <Container>
-          <Row className="flex-lg-row-reverse align-items-center">
-            <Col md={6}>
+          <Row className="flex-md-row-reverse">
+            <Col md={6} className="mb-4">
               <h2 className="subtitle">South Florida Main Office</h2>
               <p>
                 Thank you for visiting our website. We would love to hear from
-                you. At Flo Pool, we value your comments. It is you the
+                you. At FloPool, we value your comments. It is you the
                 consumers, who have made us a leading Miami Pool Service
                 provider, serving all of South Miami, including areas like
-                Kendal, Pinecrest, Coral Gables, Gables by the Sea and Palmetto
+                Kendal, Pinecrest, Coral Gables, Gables by the Sea, and Palmetto
                 Bay. If you have a pool, we would love to maintain it!
               </p>
-              <ListGroup>
+              <ListGroup className="shadow-sm">
                 <ListGroup.Item>
                   <ul>
                     <li>

@@ -4,7 +4,7 @@ import { StaticImage } from "gatsby-plugin-image";
 
 const PoolServiceSection = () => {
   return (
-    <section id="poolservice" className="subsection bg-light">
+    <section id="cooreservices" className="subsection bg-light">
       <Container>
         <Row className="flex-lg-row-reverse">
           <Col md={6}>
@@ -17,7 +17,9 @@ const PoolServiceSection = () => {
             />
           </Col>
           <Col>
-            <h4 className="title">Weekly Pool Services in Miami, Florida!</h4>
+            <h2 className="subtitle text-primary">
+              Weekly Pool Services in Miami, Florida!
+            </h2>
             <p>
               If reputation, quality, and professionalism matter to you, then
               FloPool should be your Miami Pool Service company of choice. We

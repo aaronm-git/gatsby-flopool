@@ -18,7 +18,7 @@ const LeakDetection = () => {
       </section>
       <section className="subsection">
         <Container>
-          <Row className="align-items-center">
+          <Row>
             <Col md={6}>
               <h2 className="subtitle">
                 Hire a professional leak detection team

@@ -1,6 +1,8 @@
 import React from "react";
 import { graphql, StaticQuery } from "gatsby";
 import { Carousel, Container, Row, Col, Card } from "react-bootstrap";
+import { Star, StarFill, StarHalf } from "react-bootstrap-icons";
+import { StaticImage } from "gatsby-plugin-image";
 
 const query = graphql`
   query {
@@ -25,13 +27,9 @@ const Reviews = () => {
         const reviews = data.allContentfulReviews.nodes;
         return (
           <section className="subsection bg-primary text-white">
-            <Container fluid>
+            <Container>
               <div className="text-center">
-                <h2 className="title">
-                  <span className="d-none d-md-inline">⭐️ ⭐️ </span>⭐️
-                  Testimonials ⭐️
-                  <span className="d-none d-md-inline"> ⭐️ ⭐️</span>
-                </h2>
+                <h2 className="title">Testimonials</h2>
                 <p style={{ maxWidth: "650px", margin: "0 auto 1rem" }}>
                   FloPool is the best pool service company in South Miami,
                   Florida! But don't just take our word for it. Read our raving
@@ -44,23 +42,34 @@ const Reviews = () => {
                   for (let index = 0; index < review.rating; index++) {
                     stars.push(
                       <span className="mr-2" key={"rating_" + index}>
-                        ⭐️
+                        <StarFill className="text-primary" />
                       </span>
                     );
                   }
 
                   return (
                     <Carousel.Item key={review.id}>
-                      <Row style={{ minHeight: "350px" }} className="">
+                      <Row style={{ minHeight: "350px" }}>
                         <Col md={{ span: 8, offset: 2 }}>
-                          <Card className="shadow text-dark">
-                            <Card.Body>
+                          <Card className="shadow text-dark mx-2">
+                            <Card.Body className="position-relative">
                               <h5>{review.name}</h5>
                               <p>{stars}</p>
-                              <p>{review.text.text}</p>
-                              <p className="text-muted float-right">
-                                {review.source ? review.source : "Google"}
-                              </p>
+                              <blockquote class="blockquote">
+                                <p class="mb-0">{review.text.text}</p>
+                              </blockquote>
+                              <StaticImage
+                                src="../images/google-logo.png"
+                                alt=""
+                                layout="fixed"
+                                placeholder="blurred"
+                                width={100}
+                                style={{
+                                  position: "absolute",
+                                  top: ".5rem",
+                                  right: "1rem",
+                                }}
+                              />
                             </Card.Body>
                           </Card>
                         </Col>

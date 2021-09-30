@@ -22,7 +22,7 @@ const Commercial = () => {
           <h2 className="title text-center text-light">
             Quality Commercial Pools Service Done by PROFESSIONALS
           </h2>
-          <Row className="align-items-center">
+          <Row>
             <Col md={6} className="text-center">
               <StaticImage
                 src="../../images/home/services-commercial.jpg"

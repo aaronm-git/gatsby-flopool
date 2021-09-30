@@ -4,9 +4,13 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://flopool.com",
-    title: "FloPool - The Best Pool Service In Miami, Florida",
-    image: "./src/images/swimming-pool.svg",
+    title: "FloPool",
+    titleTemplate: "%s · Miami's Best Pool Service Company",
+    description:
+      "Looking for a reliable pool service company? FloPool is here to meet all your swimming pool service needs in All of South Miami, Florida",
+    url: "https://flopool.com", // No trailing slash allowed!
+    siteUrl: "https://flopool.com/",
+    image: "/images/favicon.png", // Path to your image you placed in the 'static' folder
   },
   plugins: [
     {

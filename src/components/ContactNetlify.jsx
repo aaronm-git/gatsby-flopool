@@ -70,13 +70,13 @@ const ContactNetlify = ({ reversed }) => {
               layout="constrained"
               height={800}
               quality={100}
-              className="rounded shadow"
+              className="rounded shadow mb-4"
             />
             <div
               className="text-center w-75"
               style={{
                 position: "absolute",
-                bottom: "2%",
+                bottom: "8%",
                 left: "50%",
                 transform: "translate(-50%, -50%)",
               }}
@@ -85,11 +85,10 @@ const ContactNetlify = ({ reversed }) => {
                 className="h1 text-white text-uppercase rounded"
                 style={{
                   textShadow: "#343a40c4 2px 2px 4px",
-                  // backgroundColor: "rgba(255,255,255,.75",
                   padding: "1rem",
                 }}
               >
-                Schedule a <strong>FREE</strong> Estimate
+                Schedule a <strong>FREE</strong> Quote
               </p>
               <a href="tel:3052537665" className="btn btn-lg btn-warning">
                 <TelephoneFill />
@@ -177,7 +176,6 @@ const ContactNetlify = ({ reversed }) => {
                       City<span className="text-danger">*</span>
                     </Form.Label>
                     <Form.Control
-                      required
                       name="city"
                       placeholder="Miami"
                       required
@@ -191,7 +189,6 @@ const ContactNetlify = ({ reversed }) => {
                     <Form.Control
                       as="select"
                       aria-label="Default select example"
-                      required
                       name="state"
                       defaultValue="FL"
                       required
@@ -215,7 +212,6 @@ const ContactNetlify = ({ reversed }) => {
                     </Form.Label>
                     <Form.Control
                       type="number"
-                      required
                       name="zip"
                       placeholder="33186"
                       required
@@ -229,7 +225,6 @@ const ContactNetlify = ({ reversed }) => {
                   </Form.Label>
                   <Form.Control
                     as="select"
-                    required
                     name="serviceType"
                     defaultValue="Weekly pool service"
                     required
@@ -243,7 +238,6 @@ const ContactNetlify = ({ reversed }) => {
                     <option>Other</option>
                   </Form.Control>
                 </Form.Group>
-
                 <Form.Group controlId="formMessage">
                   <Form.Label>
                     Message<span className="text-danger">*</span>

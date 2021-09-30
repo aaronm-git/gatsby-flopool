@@ -20,7 +20,7 @@ const Footer = () => {
             />
           </Link>
           <Row className="justify-content-between">
-            <Col md={3}>
+            <Col md={4} lg={6}>
               <h5 className="subtitle text-white">Contact Us</h5>
               <ul className="">
                 <li>Florida Swimming Pools LLC.</li>
@@ -47,7 +47,7 @@ const Footer = () => {
                 </li>
               </ul>
             </Col>
-            <Col md={3}>
+            <Col md={4} lg={6}>
               <h5 className="subtitle text-white">Useful Links</h5>
               <ul className="ul-links">
                 <li>
@@ -82,7 +82,7 @@ const Footer = () => {
                 </li>
               </ul>
             </Col>
-            <Col md={3}>
+            <Col md={4} lg={6}>
               <h5 className="subtitle text-white">Services</h5>
               <ul className="ul-links">
                 <li>

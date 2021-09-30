@@ -1,17 +1,17 @@
 import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
+import Seo from "../Seo";
 import "../../styles/global.css";
-import { FormspreeProvider } from "@formspree/react";
-
-const Main = ({ children }) => {
+const Layout = ({ children }) => {
   return (
-    <FormspreeProvider project={process.env.FORMSPREE_PROJECT_ID}>
+    <>
+      <Seo />
       <Header />
       <div id="main">{children}</div>
       <Footer />
-    </FormspreeProvider>
+    </>
   );
 };
 
-export default Main;
+export default Layout;

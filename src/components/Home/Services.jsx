@@ -5,7 +5,7 @@ import { Link } from "gatsby";
 
 const Services = () => {
   return (
-    <section id="services">
+    <section id="services" className="text-center text-md-left">
       <Container className="bg-warning">
         <Row>
           <Col md={6} className="p-0">
@@ -23,7 +23,7 @@ const Services = () => {
                 <br />
                 <span className="font-weight-light">Pool Services</span>
               </h2>
-              <p className="lead">
+              <p>
                 We'll take the hard work out of your pool. Our CPO technicians
                 will do all the cleaning and maintance so you can focus on
                 enjoying your swimming pool!
@@ -53,7 +53,7 @@ const Services = () => {
                 <br />
                 <span className="font-weight-light">Pool Serives</span>
               </h2>
-              <p className="lead">
+              <p>
                 There's no doubt guests and residents love to use your swimming
                 pool as their amenity. That is why we offer our commercial pools
                 a dedicated and reliable technician team who will maintain a

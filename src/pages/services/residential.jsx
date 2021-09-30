@@ -4,10 +4,12 @@ import { Container, Row, Col } from "react-bootstrap";
 import { StaticImage } from "gatsby-plugin-image";
 import PoolServiceSection from "../../components/PoolServiceSection";
 import ContactNetlify from "../../components/ContactNetlify";
+import Seo from "../../components/seo";
 
 const Residential = () => {
   return (
     <Layout>
+      <Seo title="Residential Pool Service" />
       <section className="hero">
         <StaticImage
           src="../../images/services/hero-residential.jpg"
@@ -20,10 +22,7 @@ const Residential = () => {
       <PoolServiceSection />
       <section className="subsection bg-primary text-light">
         <Container>
-          <h2 className="title text-center text-light">
-            Scheduled Pool Services
-          </h2>
-          <Row className="align-items-center">
+          <Row>
             <Col md={6} className="text-center">
               <StaticImage
                 src="../../images/services/weekly-pool-service.jpg"
