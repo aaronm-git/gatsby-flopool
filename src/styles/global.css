@@ -26,14 +26,14 @@ body {
   padding-top: 1rem;
   padding-bottom: 1rem;
   margin-bottom: 1rem;
-  font-size: 2rem;
+  font-size: 28px;
   border-top: 2px #ffc107 solid;
   border-bottom: 2px #ffc107 solid;
   text-transform: uppercase;
 }
 
 .subtitle {
-  font-size: 28px;
+  font-size: 24px;
   font-weight: lighter;
   border-bottom: 1px #ffc107 solid;
   padding-bottom: 0.5rem;

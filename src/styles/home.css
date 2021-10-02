@@ -1,8 +1,9 @@
 #maincarousel .carousel-caption {
   text-align: center;
   bottom: auto;
-  top: 10%;
-  width: 40%;
+  left: 10%;
+  top: 18%;
+  width: 45%;
   background-color: #007bff;
   border-radius: 0.25rem;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
@@ -34,7 +35,16 @@
   background-color: white;
 }
 
-/* md */
+/* lg and beyond */
+@media screen and (min-width: 1600px) {
+  #maincarousel .carousel-caption {
+    top: 30%;
+    left: 25%;
+    width: 25%;
+  }
+}
+
+/* up to md */
 @media screen and (max-width: 992px) {
   #maincarousel .carousel-caption {
     position: relative;
@@ -42,7 +52,7 @@
     left: 0;
     width: 100%;
     text-align: center;
-    min-height: 400px;
+    min-height: 380px;
     padding: 1rem 0.5rem;
     border-radius: 0;
     display: flex;
@@ -62,6 +72,6 @@
   }
 }
 
-/* sm */
+/* sm only */
 /* @media screen and (max-width: 576px) {
 } */

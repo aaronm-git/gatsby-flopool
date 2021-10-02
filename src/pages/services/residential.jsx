@@ -4,7 +4,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import { StaticImage } from "gatsby-plugin-image";
 import PoolServiceSection from "../../components/PoolServiceSection";
 import ContactNetlify from "../../components/ContactNetlify";
-import SEOComponentt from "../../components/seo";
+import SEOComponentt from "../../components/SEO";
 
 const Residential = () => {
   return (
