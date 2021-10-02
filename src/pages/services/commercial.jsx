@@ -4,9 +4,11 @@ import { Container, Row, Col } from "react-bootstrap";
 import { StaticImage } from "gatsby-plugin-image";
 import PoolServiceSection from "../../components/PoolServiceSection";
 import ContactNetlify from "../../components/ContactNetlify";
+import SEOComponent from "../../components/SEO";
 const Commercial = () => {
   return (
     <Layout>
+      <SEOComponent title="Commercial Pool Service" />
       <section className="hero">
         <StaticImage
           src="../../images/services/hero-commercial.jpg"

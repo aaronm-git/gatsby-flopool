@@ -3,9 +3,11 @@ import Layout from "../../components/layouts/Main";
 import { Container, Row, Col } from "react-bootstrap";
 import { StaticImage } from "gatsby-plugin-image";
 import ContactNetlify from "../../components/ContactNetlify";
+import SEOComponent from "../../components/SEO";
 const Remodeling = () => {
   return (
     <Layout>
+      <SEOComponent title="Pool & Deck Remodeling" />
       <section className="hero">
         <StaticImage
           src="../../images/services/hero-remodeling.jpg"

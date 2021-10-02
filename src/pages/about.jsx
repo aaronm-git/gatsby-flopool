@@ -4,6 +4,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import { StaticImage } from "gatsby-plugin-image";
 import { TelephoneFill } from "react-bootstrap-icons";
 import ContactNetlify from "../components/ContactNetlify";
+import SEOComponent from "../components/SEO";
 
 const bottomOverlayStyle = {
   position: "absolute",
@@ -17,6 +18,7 @@ const bottomOverlayStyle = {
 const About = () => {
   return (
     <Layout>
+      <SEOComponent title="About page" />
       <section className="hero">
         <StaticImage
           src="../images/about-us/hero-about-us.jpg"

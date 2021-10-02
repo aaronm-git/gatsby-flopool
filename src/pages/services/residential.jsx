@@ -4,12 +4,12 @@ import { Container, Row, Col } from "react-bootstrap";
 import { StaticImage } from "gatsby-plugin-image";
 import PoolServiceSection from "../../components/PoolServiceSection";
 import ContactNetlify from "../../components/ContactNetlify";
-import Seo from "../../components/seo";
+import SEOComponentt from "../../components/seo";
 
 const Residential = () => {
   return (
     <Layout>
-      <Seo title="Residential Pool Service" />
+      <SEOComponentt title="Residential Pool Service" />
       <section className="hero">
         <StaticImage
           src="../../images/services/hero-residential.jpg"

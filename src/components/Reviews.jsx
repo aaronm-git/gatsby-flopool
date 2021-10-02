@@ -4,21 +4,6 @@ import { Carousel, Container, Row, Col, Card } from "react-bootstrap";
 import { Star, StarFill, StarHalf } from "react-bootstrap-icons";
 import { StaticImage } from "gatsby-plugin-image";
 
-const query = graphql`
-  query {
-    allContentfulReviews {
-      nodes {
-        id
-        name
-        rating
-        text {
-          text
-        }
-      }
-    }
-  }
-`;
-
 const Reviews = () => {
   return (
     <StaticQuery
@@ -87,3 +72,18 @@ const Reviews = () => {
 };
 
 export default Reviews;
+
+const query = graphql`
+  query MyReviews {
+    allContentfulReviews {
+      nodes {
+        id
+        name
+        rating
+        text {
+          text
+        }
+      }
+    }
+  }
+`;

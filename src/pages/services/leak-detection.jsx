@@ -3,10 +3,12 @@ import Layout from "../../components/layouts/Main";
 import { Container, Row, Col } from "react-bootstrap";
 import { StaticImage } from "gatsby-plugin-image";
 import ContactNetlify from "../../components/ContactNetlify";
+import SEOComponent from "../../components/SEO";
 
 const LeakDetection = () => {
   return (
     <Layout>
+      <SEOComponent title="Pool leak detection service" />
       <section className="hero">
         <StaticImage
           src="../../images/services/hero-leak-detection.jpg"

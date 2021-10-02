@@ -1,5 +1,5 @@
 import React from "react";
-import { Carousel } from "react-bootstrap";
+import { Container, Carousel } from "react-bootstrap";
 import { StaticImage } from "gatsby-plugin-image";
 import { Link } from "gatsby";
 
@@ -15,7 +15,7 @@ const MainCarousel = () => {
           layout="fullWidth"
         />
         <Carousel.Caption>
-          <div>
+          <Container>
             <h2>Miami's Best Pool Service Company</h2>
             <h3>Hire a pool company you can trust</h3>
             <p>
@@ -27,7 +27,7 @@ const MainCarousel = () => {
             <Link className="btn btn-lg btn-warning mb-2" to="/get-a-quote">
               Get A Quote
             </Link>
-          </div>
+          </Container>
         </Carousel.Caption>
       </Carousel.Item>
 
@@ -40,7 +40,7 @@ const MainCarousel = () => {
           layout="fullWidth"
         />
         <Carousel.Caption>
-          <div>
+          <Container>
             <h2>We'll handle all your pool equipment needs</h2>
             <p>
               We install, service and repair all brand-name pool and spa
@@ -50,7 +50,7 @@ const MainCarousel = () => {
             <Link className="btn btn-lg btn-warning mb-2" to="/get-a-quote">
               Get A Quote
             </Link>
-          </div>
+          </Container>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>

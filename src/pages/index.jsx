@@ -6,10 +6,11 @@ import KeyBenefits from "../components/Home/KeyBenefits";
 import Services from "../components/Home/Services";
 import ContactNetlify from "../components/ContactNetlify";
 import Reviews from "../components/Reviews";
-
+import SEOComponent from "../components/SEO";
 const Index = () => {
   return (
     <Layout>
+      <SEOComponent />
       <MainCarousel />
       <KeyBenefits />
       <Services />

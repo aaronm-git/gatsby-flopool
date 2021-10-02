@@ -8,7 +8,9 @@ import "../styles/contact-section.css";
 import Helmet from "react-helmet";
 
 const Contact = ({ reversed }) => {
-  const rowReversed = reversed ? "flex-lg-row-reverse" : null;
+  const rowReversed = reversed
+    ? "flex-lg-row-reverse"
+    : "flex-row-reverse flex-lg-row";
   const [state, handleSubmit] = useForm("contact");
   return (
     <section id="contactform" className="subsection bg-light">
