@@ -46,11 +46,12 @@ const Residential = () => {
               <p>
                 By cleaning your pool every week, you avoid big chemical
                 fluctuations in the pool water and keeps your pool clean and
-                beautiful every day of the week.
+                beautiful every day of the week. We also recommend installing a
+                autocleaner to keep you pool clean between pool services.
               </p>
               <p>
-                FloPool provides reliable weekly pool services in all South
-                Miami Florida. Taking on the hard work of owning aswimming pool
+                FloPool provides reliable weekly pool services in all of South
+                Miami Florida. Taking on the hard work of owning a swimming pool
                 so you can focus on relaxing by a clean and beautiful pool with
                 your family.
               </p>

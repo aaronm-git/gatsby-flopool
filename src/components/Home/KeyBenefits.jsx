@@ -13,15 +13,14 @@ const KeyBenefits = () => {
           <Col md={4}>
             <StaticImage
               src="../../images/home/key-benefits.png"
-              quality={100}
               alt="Weekly residential and commercial pool service in Miami, Florida"
-              layout="constrained"
               placeholder="tracedSVG"
+              height={250}
             />
             <div className="copy">
-              <h4 className="subtitle text-primary">
+              <h2 className="subtitle text-primary">
                 Pool Cleaning & Maintenance
-              </h4>
+              </h2>
               <p>
                 South Florida residents, condos, and homeowner associations have
                 many options when it comes to choosing a pool service company in
@@ -35,15 +34,14 @@ const KeyBenefits = () => {
           <Col md={4}>
             <StaticImage
               src="../../images/home/key-benefits-3.png"
-              quality={100}
               alt="We install, service and repair all brand-name pool and spa equipment in Miami, Florida"
-              layout="constrained"
               placeholder="tracedSVG"
+              height={250}
             />
             <div className="copy">
-              <h4 className="subtitle text-primary">
+              <h2 className="subtitle text-primary">
                 Pool Equipement Installation & Repair
-              </h4>
+              </h2>
               <p>
                 FloPool provides leak detection service, repairs, and equipment
                 installations for any type of pool, whether commercial or
@@ -58,15 +56,14 @@ const KeyBenefits = () => {
           <Col md={4}>
             <StaticImage
               src="../../images/home/key-benefits-2.png"
-              quality={100}
               alt="Professional pool service care in Miami, Florida"
-              layout="constrained"
               placeholder="tracedSVG"
+              height={250}
             />
             <div className="copy">
-              <h4 className="subtitle text-primary">
+              <h2 className="subtitle text-primary">
                 Licensed & Insured Company
-              </h4>
+              </h2>
               <p>
                 Florida Swimming Pools LLC. is fully licensed and insured with
                 over 15 years of industry experience. All our professional

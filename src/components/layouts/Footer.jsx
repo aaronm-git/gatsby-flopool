@@ -1,13 +1,13 @@
-import React from "react";
+/** @jsx jsx */
+import { css, CSSProperties, jsx } from "@emotion/react";
 import { Container, Row, Col } from "react-bootstrap";
 import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
-import "../../styles/footer.css";
 import { EnvelopeFill, TelephoneFill } from "react-bootstrap-icons";
 
 const Footer = () => {
   return (
-    <footer id="footer" className="text-light">
+    <footer id="footer" className="text-light" css={footerCSS}>
       <section className="bg-dark subsection">
         <Container>
           <Link to="/">
@@ -22,15 +22,17 @@ const Footer = () => {
           <Row className="justify-content-between">
             <Col md={4} lg={3}>
               <h5 className="subtitle text-white">Contact Us</h5>
-              <ul className="">
+              <ul>
                 <li>Florida Swimming Pools LLC.</li>
-                <li>13301 SW 97th St.</li>
+                <li>13301 SW 132nd St.</li>
                 <li>Suite #118</li>
                 <li>Miami, Florida 33186</li>
               </ul>
               <hr className="bg-warning" />
-              <ul className="">
-                <h5>Miami, FL. Office</h5>
+              <ul>
+                <li>
+                  <strong>Miami, FL. Office</strong>
+                </li>
                 <li>Mon-Sat: 8:30 AM – 6 PM</li>
                 <li>Sunday: 10 AM – 4 PM</li>
                 <li>
@@ -140,3 +142,13 @@ const Footer = () => {
 };
 
 export default Footer;
+
+const footerCSS = css`
+  .ul-links li {
+    padding: 4px 0;
+  }
+
+  ul a {
+    color: #ffc107;
+  }
+`;

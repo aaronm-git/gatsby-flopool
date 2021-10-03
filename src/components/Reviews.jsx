@@ -1,8 +1,37 @@
-import React from "react";
+/** @jsx jsx */
+import { css, jsx } from "@emotion/react";
 import { graphql, StaticQuery } from "gatsby";
 import { Carousel, Container, Row, Col, Card } from "react-bootstrap";
 import { Star, StarFill, StarHalf } from "react-bootstrap-icons";
 import { StaticImage } from "gatsby-plugin-image";
+
+const componentCSS = css`
+  .carousel-indicators {
+    bottom: -4rem;
+  }
+
+  // Carousel item css
+  @media screen and (max-height: 992px) {
+    .card {
+      position: relative;
+      height: 300px;
+      overflow: scroll;
+    }
+
+    .card .header {
+      position: sticky;
+      top: 0;
+      display: flex;
+      background-color: white;
+      z-index: 2;
+      padding: 16px 10px 0;
+    }
+
+    .card .header .gatsby-image-wrapper {
+      margin-left: auto;
+    }
+  }
+`;
 
 const Reviews = () => {
   return (
@@ -11,7 +40,10 @@ const Reviews = () => {
       render={(data) => {
         const reviews = data.allContentfulReviews.nodes;
         return (
-          <section className="subsection bg-primary text-white">
+          <section
+            className="subsection bg-primary text-white"
+            css={componentCSS}
+          >
             <Container>
               <div className="text-center">
                 <h2 className="title">Testimonials</h2>
@@ -34,27 +66,24 @@ const Reviews = () => {
 
                   return (
                     <Carousel.Item key={review.id}>
-                      <Row style={{ minHeight: "350px" }}>
+                      <Row>
                         <Col md={{ span: 8, offset: 2 }}>
                           <Card className="shadow text-dark mx-2">
-                            <Card.Body className="position-relative">
-                              <h5>{review.name}</h5>
-                              <p>{stars}</p>
-                              <blockquote class="blockquote">
-                                <p class="mb-0">{review.text.text}</p>
-                              </blockquote>
+                            <div className="header shadow-sm">
+                              <div>
+                                <h5>{review.name}</h5>
+                                <p>{stars}</p>
+                              </div>
                               <StaticImage
                                 src="../images/google-logo.png"
                                 alt=""
                                 layout="fixed"
                                 placeholder="blurred"
                                 width={100}
-                                style={{
-                                  position: "absolute",
-                                  top: ".5rem",
-                                  right: "1rem",
-                                }}
                               />
+                            </div>
+                            <Card.Body>
+                              <p className="pb-2">{review.text.text}</p>
                             </Card.Body>
                           </Card>
                         </Col>

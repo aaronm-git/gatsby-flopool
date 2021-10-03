@@ -19,17 +19,42 @@ const Repair = () => {
       </section>
       <section className="subsection">
         <Container>
-          <Row>
+          <Row className="flex-lg-row-reverse">
             <Col md={6}>
               <h2 className="subtitle text-primary">
                 We repair and install all name brand pool equipment.
               </h2>
               <p>
-                All of the FloPool team of trained pool technicians have the
+                We are fully licensed to repair and install all types of pool
+                equipment for residential and commercial residencies.
+              </p>
+              <div className="rounded bg-light p-2 shadow-sm mb-3">
+                <p className="h5 font-weight-light text-primary mb-3">
+                  Our pool repair and installation service include:
+                </p>
+                <Row>
+                  <Col>
+                    <ul className="mb-0">
+                      <li>Pool Pumps</li>
+                      <li>Pool Filter</li>
+                      <li>Pool Cleaners</li>
+                    </ul>
+                  </Col>
+                  <Col>
+                    <ul>
+                      <li>Pool salt systems</li>
+                      <li>Pool lights</li>
+                      <li>and more!</li>
+                    </ul>
+                  </Col>
+                </Row>
+              </div>
+              <p>
+                All of the FloPool team of trained pool technicians has the
                 experience and skills necessary to diagnose and repair your pool
                 equipment. Contact us for a quote of your pool equipment repair
-                needs and we'll accurtely and swiftly troubleshoot and repair
-                your equipment.
+                and we'll accurately and swiftly troubleshoot and repair your
+                equipment.
               </p>
               <p>
                 A lot of the time we can do the repairs at your property, but in

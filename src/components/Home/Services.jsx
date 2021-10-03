@@ -12,8 +12,7 @@ const Services = () => {
             <StaticImage
               src="../../images/home/services-residential.jpg"
               alt="Weekly Pool Service Available For Residential Properties"
-              layout="fullWidth"
-              quality={100}
+              width={480}
             />
           </Col>
           <Col md={6} className="px-4 py-5 d-flex align-items-center">
@@ -25,7 +24,7 @@ const Services = () => {
               </h2>
               <p>
                 We'll take the hard work out of your pool. Our CPO technicians
-                will do all the cleaning and maintance so you can focus on
+                will do all the cleaning and maintenance so you can focus on
                 enjoying your swimming pool!
               </p>
               <Link
@@ -38,12 +37,11 @@ const Services = () => {
           </Col>
         </Row>
         <Row className="flex-md-row-reverse">
-          <Col md={6} className="p-0">
+          <Col md={6} className="p-0 text-right">
             <StaticImage
               src="../../images/home/services-commercial.jpg"
               alt="Weekly Pool Service Available For Commercial Properties"
-              layout="fullWidth"
-              quality={100}
+              width={480}
             />
           </Col>
           <Col md={6} className="px-4 py-5 d-flex align-items-center">

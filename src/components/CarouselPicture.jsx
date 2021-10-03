@@ -33,7 +33,12 @@ const CarouselPicture = (props) => {
     <picture>
       <source media="(min-width: 2000px)" srcset={sources[0]} />
       <source media="(max-width:992px)" srcset={sources[1]} />
-      <img src={sources[2]} alt={props.alt} className="img-fluid" />
+      <img
+        src={sources[2]}
+        alt={props.alt}
+        className="img-fluid"
+        height="800"
+      />
     </picture>
   );
 };

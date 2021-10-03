@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+/** @jsx jsx */
+import { css, jsx } from "@emotion/react";
+import { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { StaticImage } from "gatsby-plugin-image";
 import States from "../states";
 import { TelephoneFill } from "react-bootstrap-icons";
-import "../styles/contact-section.css";
 
 function encode(data) {
   return Object.keys(data)
@@ -46,7 +47,11 @@ const ContactNetlify = ({ reversed }) => {
   };
 
   return (
-    <section id="contactformnetlify" className="subsection bg-light">
+    <section
+      id="contactformnetlify"
+      className="subsection bg-light"
+      css={contactFormCSS}
+    >
       <Container>
         <div className="text-center mb-2">
           <h2 className="text-primary">
@@ -98,7 +103,7 @@ const ContactNetlify = ({ reversed }) => {
           </Col>
           <Col lg={6}>
             {succeeded ? (
-              <h5 className="text-center">Thank you for reaching out!</h5>
+              <h3 className="text-center h5">Thank you for reaching out!</h3>
             ) : (
               <Form
                 onSubmit={handleSubmit}
@@ -109,9 +114,9 @@ const ContactNetlify = ({ reversed }) => {
               >
                 <input type="hidden" name="form-name" value="contact" />
                 <input name="bot-field" type="hidden" onChange={handleChange} />
-                <h4 className="text-center text-uppercase subtitle">
+                <h3 className="text-center text-uppercase subtitle">
                   Request A Quote
-                </h4>
+                </h3>
                 <Form.Group controlId="formName">
                   <Form.Label>
                     Name<span className="text-danger">*</span>
@@ -150,7 +155,9 @@ const ContactNetlify = ({ reversed }) => {
                   </Form.Group>
                 </Row>
                 <h5 className="mb-0 mt-3">Property Location</h5>
-                <p className="text-muted">Where you wish to receive service</p>
+                <p className="text-muted mb-0">
+                  Where you wish to receive service
+                </p>
                 <Form.Group className="mb-3" controlId="formAddress">
                   <Form.Label>
                     Address<span className="text-danger">*</span>
@@ -269,3 +276,18 @@ const ContactNetlify = ({ reversed }) => {
 };
 
 export default ContactNetlify;
+
+const contactFormCSS = css`
+  .circled::before {
+    position: absolute;
+    background-color: #007bff;
+    border-radius: 25%;
+    /* opacity: 0.95; */
+    content: "";
+    height: 100%;
+    width: 100%;
+    /* transform: scale(1.1); */
+    /* z-index: -1; */
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  }
+`;

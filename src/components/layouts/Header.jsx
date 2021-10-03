@@ -1,7 +1,17 @@
-import React from "react";
-import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
+/** @jsx jsx */
+import { css, jsx } from "@emotion/react";
+import { Row, Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
 import { StaticImage } from "gatsby-plugin-image";
 import { Link } from "gatsby";
+import { TelephoneFill } from "react-bootstrap-icons";
+
+const mobileCSS = css`
+  @media screen and (max-width: 992px) {
+    .btn {
+      box-shadow: none;
+    }
+  }
+`;
 
 const Header = () => {
   return (
@@ -69,13 +79,21 @@ const Header = () => {
               {/* <Link to="/blog" className="nav-link">
                 Blog
               </Link> */}
-              <div className="ml-lg-3">
-                <Link
-                  to="/get-a-quote"
-                  className="btn btn-primary d-block d-lg-inline-block"
-                >
-                  Get A Quote
-                </Link>
+              <div className="ml-lg-4" css={mobileCSS}>
+                <Row>
+                  <a
+                    href="tel:3052537665"
+                    className="btn btn-warning flex-fill d-md-none flex-fill mx-1"
+                  >
+                    <TelephoneFill /> Call Today
+                  </a>
+                  <Link
+                    to="/get-a-quote"
+                    className="btn btn-primary flex-fill mx-1"
+                  >
+                    Get A Quote
+                  </Link>
+                </Row>
               </div>
             </Nav>
           </Navbar.Collapse>

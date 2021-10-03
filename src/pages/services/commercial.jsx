@@ -35,7 +35,7 @@ const Commercial = () => {
             </Col>
             <Col md={6}>
               <h4 className="subtitle text-light">
-                Hire professional pool technicians for your commercial pools
+                We are pool service contractors
               </h4>
               <p>
                 Regular weekly pool service is important. Having a professional
@@ -52,9 +52,11 @@ const Commercial = () => {
                 guests. Rain or shine we'll make sure your swimming pool is
                 clean and operational. As a commercial client of ours you will
                 receive a dedicated team to look after your pool equipment and
-                swimming pool every week. Schedule regular service with our
-                experts and you’re commercial pool with be ready for your guests
-                at all times.
+                swimming pool every week.
+              </p>
+              <p>
+                Schedule a regular service with our experts for your commercial
+                pool today!
               </p>
             </Col>
           </Row>
