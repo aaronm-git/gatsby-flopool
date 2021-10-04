@@ -37,7 +37,7 @@ const KeyBenefits = () => {
             </div>
           </Col>
           <Col md={4}>
-            <Link to="/services/repairs">
+            <Link to="/services/repair">
               <StaticImage
                 src="../../images/home/key-benefits-3.png"
                 alt="We install, service and repair all brand-name pool and spa equipment in Miami, Florida"
@@ -46,7 +46,7 @@ const KeyBenefits = () => {
               />
             </Link>
             <div className="copy">
-              <Link to="/services/repairs" className="text-decoration-none">
+              <Link to="/services/repair" className="text-decoration-none">
                 <h2 className="subtitle text-primary">
                   Pool Equipement Installation & Repair
                 </h2>
