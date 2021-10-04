@@ -5,14 +5,6 @@ import { StaticImage } from "gatsby-plugin-image";
 import { Link } from "gatsby";
 import { TelephoneFill } from "react-bootstrap-icons";
 
-const mobileCSS = css`
-  @media screen and (max-width: 992px) {
-    .btn {
-      box-shadow: none;
-    }
-  }
-`;
-
 const Header = () => {
   return (
     <header className="shadow-sm fixed-top">
@@ -83,7 +75,7 @@ const Header = () => {
                 <Row>
                   <a
                     href="tel:3052537665"
-                    className="btn btn-warning flex-fill d-md-none flex-fill mx-1"
+                    className="btn btn-warning flex-fill d-lg-none flex-fill mx-1"
                   >
                     <TelephoneFill /> Call Today
                   </a>
@@ -104,3 +96,11 @@ const Header = () => {
 };
 
 export default Header;
+
+const mobileCSS = css`
+  @media screen and (max-width: 992px) {
+    .btn {
+      box-shadow: none;
+    }
+  }
+`;

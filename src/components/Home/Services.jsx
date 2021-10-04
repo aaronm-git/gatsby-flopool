@@ -1,21 +1,56 @@
-import React from "react";
+/** @jsx jsx */
+import { css, jsx } from "@emotion/react";
 import { Container, Row, Col } from "react-bootstrap";
-import { StaticImage } from "gatsby-plugin-image";
-import { Link } from "gatsby";
+import { Link, graphql, useStaticQuery } from "gatsby";
+import BackgroundImage from "gatsby-background-image";
 
 const Services = () => {
+  const data = useStaticQuery(
+    graphql`
+      {
+        residential: file(base: { eq: "residential-pool-service.jpg" }) {
+          name
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+        commercial: file(base: { eq: "commercial-pool-service.jpg" }) {
+          name
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }
+    `
+  );
+
+  console.log(data);
+
+  // Set ImageData.
+  const residentialImageData = data.residential.childImageSharp.fluid;
+  const commercialImageData = data.commercial.childImageSharp.fluid;
+
   return (
-    <section id="services" className="text-center text-md-left">
-      <Container className="bg-warning">
+    <section id="services" className="text-center">
+      <Container className="bg-warning mb-5 shadow rounded">
         <Row>
-          <Col md={6} className="p-0">
-            <StaticImage
-              src="../../images/home/services-residential.jpg"
-              alt="Weekly Pool Service Available For Residential Properties"
-              width={480}
+          <Col md={6} className="p-0 text-right">
+            <BackgroundImage
+              Tag="div"
+              fluid={residentialImageData}
+              backgroundColor={`#040e18`}
+              css={backgroundCSS}
             />
           </Col>
-          <Col md={6} className="px-4 py-5 d-flex align-items-center">
+          <Col
+            md={6}
+            className="py-4 d-flex align-items-center"
+            css={textBoxCSS}
+          >
             <div>
               <h2 className="h1 text-primary font-weight-bold text-uppercase">
                 Residential
@@ -37,14 +72,19 @@ const Services = () => {
           </Col>
         </Row>
         <Row className="flex-md-row-reverse">
-          <Col md={6} className="p-0 text-right">
-            <StaticImage
-              src="../../images/home/services-commercial.jpg"
-              alt="Weekly Pool Service Available For Commercial Properties"
-              width={480}
+          <Col md={6} className="p-0">
+            <BackgroundImage
+              Tag="div"
+              fluid={commercialImageData}
+              backgroundColor={`#040e18`}
+              css={backgroundCSS}
             />
           </Col>
-          <Col md={6} className="px-4 py-5 d-flex align-items-center">
+          <Col
+            md={6}
+            className="py-4 d-flex align-items-center"
+            css={textBoxCSS}
+          >
             <div>
               <h2 className="h1 text-primary font-weight-bold text-uppercase">
                 Commercial
@@ -52,12 +92,10 @@ const Services = () => {
                 <span className="font-weight-light">Pool Serives</span>
               </h2>
               <p>
-                There's no doubt guests and residents love to use your swimming
-                pool as their amenity. That is why we offer our commercial pools
-                a dedicated and reliable technician team who will maintain a
-                clean and safe swimming pool for everyone who uses it. You can
-                count on FloPool to always provide you the best pool service in
-                Miami, Florida.
+                Our commercial pools are backed by a team of dedicated and
+                reliable pool technicians who will maintain a clean and safe
+                swimming pool for every guest. You can count on FloPool to
+                provide you the best pool service in Miami, Florida.
               </p>
               <Link
                 to="/services/commercial"
@@ -74,3 +112,29 @@ const Services = () => {
 };
 
 export default Services;
+
+const textBoxCSS = css`
+  @media screen and (min-width: 768px) {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    h2 {
+      font-size: 26px;
+    }
+  }
+`;
+
+const backgroundCSS = css`
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media screen and (max-width: 992px) {
+    height: 350px;
+  }
+`;

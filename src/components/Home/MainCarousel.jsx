@@ -111,9 +111,9 @@ const carouselCSS = css`
   /* lg and beyond */
   @media screen and (min-width: 1600px) {
     .carousel-caption {
-      top: 30%;
+      top: 20%;
       left: 25%;
-      width: 25%;
+      width: 28%;
     }
   }
 

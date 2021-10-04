@@ -5,34 +5,6 @@ import { Carousel, Container, Row, Col, Card } from "react-bootstrap";
 import { Star, StarFill, StarHalf } from "react-bootstrap-icons";
 import { StaticImage } from "gatsby-plugin-image";
 
-const componentCSS = css`
-  .carousel-indicators {
-    bottom: -4rem;
-  }
-
-  // Carousel item css
-  @media screen and (max-height: 992px) {
-    .card {
-      position: relative;
-      height: 300px;
-      overflow: scroll;
-    }
-
-    .card .header {
-      position: sticky;
-      top: 0;
-      display: flex;
-      background-color: white;
-      z-index: 2;
-      padding: 16px 10px 0;
-    }
-
-    .card .header .gatsby-image-wrapper {
-      margin-left: auto;
-    }
-  }
-`;
-
 const Reviews = () => {
   return (
     <StaticQuery
@@ -114,5 +86,30 @@ const query = graphql`
         }
       }
     }
+  }
+`;
+
+const componentCSS = css`
+  .carousel-indicators {
+    bottom: -4rem;
+  }
+
+  .card {
+    position: relative;
+    height: 300px;
+    overflow: scroll;
+  }
+
+  .card .header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    background-color: white;
+    z-index: 2;
+    padding: 16px 10px 0;
+  }
+
+  .card .header .gatsby-image-wrapper {
+    margin-left: auto;
   }
 `;
