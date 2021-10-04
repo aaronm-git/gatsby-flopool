@@ -27,7 +27,7 @@ const Commercial = () => {
           <Row>
             <Col md={6} className="text-center">
               <StaticImage
-                src="../../images/home/services-commercial.jpg"
+                src="../../images/home/commercial-pool-service.jpg"
                 alt="FloPool provides weekly pool service to residential pool owners in Miami, Florida"
                 className="rounded shadow mb-4"
                 height={450}

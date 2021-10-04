@@ -27,9 +27,6 @@ const Services = () => {
       }
     `
   );
-
-  console.log(data);
-
   // Set ImageData.
   const residentialImageData = data.residential.childImageSharp.fluid;
   const commercialImageData = data.commercial.childImageSharp.fluid;
