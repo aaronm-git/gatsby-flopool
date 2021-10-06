@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { css, CSSProperties, jsx } from "@emotion/react";
+import { css, jsx } from "@emotion/react";
 import { Container, Row, Col } from "react-bootstrap";
 import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
