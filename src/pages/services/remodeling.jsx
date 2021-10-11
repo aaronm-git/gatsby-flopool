@@ -14,6 +14,7 @@ const Remodeling = () => {
           alt="FloPool provides the best pool and deck remodeling services in Miami, Florida"
           layout="fullWidth"
           loading="eager"
+          placeholder="blurred"
         />
         <h1 className="title">Pool & Deck Remodeling</h1>
       </section>

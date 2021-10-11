@@ -18,7 +18,7 @@ const Reviews = () => {
           >
             <Container>
               <div className="text-center">
-                <h2 className="title">Testimonials</h2>
+                <h2 className="title text-white">Testimonials</h2>
                 <p style={{ maxWidth: "650px", margin: "0 auto 1rem" }}>
                   FloPool is the best pool service company in South Miami,
                   Florida! But don't just take our word for it. Read our raving
@@ -43,7 +43,7 @@ const Reviews = () => {
                           <Card className="shadow text-dark mx-2">
                             <div className="header shadow-sm">
                               <div>
-                                <h5>{review.name}</h5>
+                                <h3 className="h5">{review.name}</h3>
                                 <p>{stars}</p>
                               </div>
                               <StaticImage

@@ -114,7 +114,7 @@ const ContactNetlify = ({ reversed }) => {
               >
                 <input type="hidden" name="form-name" value="contact" />
                 <input name="bot-field" type="hidden" onChange={handleChange} />
-                <h3 className="text-center text-uppercase subtitle">
+                <h3 className="text-center text-uppercase subtitle h4">
                   Request A Quote
                 </h3>
                 <Form.Group controlId="formName">
@@ -154,7 +154,7 @@ const ContactNetlify = ({ reversed }) => {
                     />
                   </Form.Group>
                 </Row>
-                <h5 className="mb-0 mt-3">Property Location</h5>
+                <h4 className="mb-0 mt-3">Property Location</h4>
                 <p className="text-muted mb-0">
                   Where you wish to receive service
                 </p>

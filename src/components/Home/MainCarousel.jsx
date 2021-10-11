@@ -1,103 +1,213 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/react";
-import { Container, Carousel } from "react-bootstrap";
-import { StaticImage } from "gatsby-plugin-image";
-import { Link } from "gatsby";
-import CarouselPicture from "../CarouselPicture";
+import { Carousel, Container } from "react-bootstrap";
+import { GatsbyImage, getImage, withArtDirection } from "gatsby-plugin-image";
+import { Link, graphql, useStaticQuery } from "gatsby";
+
+const slides = [
+  {
+    imgName: "best_pool_service_miami",
+    imgAlt: "We are the best pool service company in Miami, FL",
+    title: "Miami's Best Pool Service Company",
+    subtitle: "",
+    text: `FloPool is the preferred pool service and repair company
+    for residential and commercial pool owners throughout South Miami.
+    We are licensed and insured, so you know you're hiring a pool 
+    service company that looks after you.`,
+    imgUrl: "/get-a-quote",
+    link: {
+      enabled: true,
+      text: "Get A Quote",
+      url: "/get-a-quote",
+    },
+  },
+  {
+    imgName: "swimming_pool_equipment_repair",
+    imgAlt: "We are the best pool service company in Miami, FL",
+    title: "Professional Pool Equipment Installation and Repair",
+    subtitle: "",
+    text: `We install, service and repair all brand-name pool and spa
+    equipment. From pumps and filters to heaters and salt systems, our
+    licensed experts can handle it.`,
+    imgUrl: "/get-a-quote",
+    link: {
+      enabled: true,
+      text: "Get A Quote",
+      url: "/get-a-quote",
+    },
+  },
+];
 
 const MainCarousel = () => {
+  const SliderImageQuery = graphql`
+    {
+      sm: allFile(
+        filter: {
+          relativeDirectory: { eq: "home_slides" }
+          childImageSharp: { original: { width: { eq: 1000 } } }
+        }
+      ) {
+        edges {
+          node {
+            childImageSharp {
+              gatsbyImageData(
+                jpgOptions: { progressive: true }
+                placeholder: BLURRED
+                quality: 100
+              )
+            }
+            name
+            id
+          }
+        }
+      }
+      lg: allFile(
+        filter: {
+          relativeDirectory: { eq: "home_slides" }
+          childImageSharp: { original: { width: { eq: 2560 } } }
+        }
+        sort: { fields: name, order: ASC }
+      ) {
+        edges {
+          node {
+            childImageSharp {
+              gatsbyImageData(
+                jpgOptions: { progressive: true }
+                placeholder: BLURRED
+                quality: 100
+              )
+            }
+            name
+            id
+          }
+        }
+      }
+      normal: allFile(
+        filter: {
+          relativeDirectory: { eq: "home_slides" }
+          childImageSharp: { original: { width: { eq: 1920 } } }
+        }
+        sort: { fields: name, order: ASC }
+      ) {
+        edges {
+          node {
+            childImageSharp {
+              gatsbyImageData(
+                jpgOptions: { progressive: true }
+                placeholder: BLURRED
+                quality: 100
+              )
+            }
+            name
+            id
+          }
+        }
+      }
+    }
+  `;
+  const data = useStaticQuery(SliderImageQuery);
+  const SlideImages = ({ imgName, imgAlt }) => {
+    const smImgNodeIndex = data.sm.edges.findIndex(
+      (edge) => edge.node.name === imgName + "-sm"
+    );
+    const lgImgNodeIndex = data.lg.edges.findIndex(
+      (edge) => edge.node.name === imgName + "-lg"
+    );
+    const normalImgNodeIndex = data.normal.edges.findIndex(
+      (edge) => edge.node.name === imgName
+    );
+
+    const small = data.sm.edges[smImgNodeIndex].node;
+    const large = data.lg.edges[lgImgNodeIndex].node;
+    const normal = data.normal.edges[normalImgNodeIndex].node;
+
+    const images = withArtDirection(getImage(normal), [
+      {
+        media: "(max-width: 992px)",
+        image: getImage(small),
+      },
+      {
+        media: "(min-width: 2000px)",
+        image: getImage(large),
+      },
+    ]);
+    return (
+      <GatsbyImage
+        image={images}
+        alt={imgAlt}
+        css={artDirected}
+        // className="w-100"
+        // imgClassName="img-fluid"
+      />
+    );
+  };
   return (
     <Carousel id="maincarousel" css={carouselCSS}>
-      <Carousel.Item>
-        {/* <CarouselPicture
-          fileName="best_pool_service_miami"
-          alt="Miami Florida's Best Pool Service Company"
-        /> */}
-        <StaticImage
-          src="../../images/home_slides/best_pool_service_miami.jpg"
-          alt="We are the best pool service company in Miami, FL"
-          layout="fullWidth"
-          loading="eager"
-          placeholder="blurred"
-        />
-        <Carousel.Caption>
-          <Container>
-            <h2>Miami's Best Pool Service Company</h2>
-            <h3>Hire a pool company you can trust</h3>
-            <p>
-              FloPool is the preferred pool service and repair company for
-              residential and commercial pool owners throughout South Miami. We
-              are licensed and insured, so you know you're hiring a pool service
-              company that looks after you.
-            </p>
-            <Link className="btn btn-lg btn-warning mb-2" to="/get-a-quote">
-              Get A Quote
+      {slides.map((slide) => {
+        return (
+          <Carousel.Item key={slide.imgName}>
+            <Link to={slide.imgUrl}>
+              <SlideImages imgName={slide.imgName} imgAlt={slide.imgAlt} />
             </Link>
-          </Container>
-        </Carousel.Caption>
-      </Carousel.Item>
-
-      <Carousel.Item>
-        <StaticImage
-          src="../../images/home_slides/swimming_pool_equipment_repair.jpg"
-          alt="We are the best pool service company in Miami, FL"
-          layout="fullWidth"
-          loading="eager"
-          placeholder="blurred"
-        />
-        <Carousel.Caption>
-          <Container>
-            <h2>We'll handle all your pool equipment needs</h2>
-            <p>
-              We install, service and repair all brand-name pool and spa
-              equipment. From pumps and filters to heaters and salt systems, our
-              licensed experts can handle it.
-            </p>
-            <Link className="btn btn-lg btn-warning mb-2" to="/get-a-quote">
-              Get A Quote
-            </Link>
-          </Container>
-        </Carousel.Caption>
-      </Carousel.Item>
-
-      {/* <Carousel.Item>
-        <CarouselPicture
-          fileName="swimming_pool_equipment_repair"
-          alt="Pool Equipment Installation and Repair"
-        />
-        <Carousel.Caption>
-          <Container>
-            <h2>We'll handle all your pool equipment needs</h2>
-            <p>
-              We install, service and repair all brand-name pool and spa
-              equipment. From pumps and filters to heaters and salt systems, our
-              licensed experts can handle it.
-            </p>
-            <Link className="btn btn-lg btn-warning mb-2" to="/get-a-quote">
-              Get A Quote
-            </Link>
-          </Container>
-        </Carousel.Caption>
-      </Carousel.Item> */}
+            <Carousel.Caption>
+              <Container>
+                {slide.title && <h2>{slide.title}</h2>}
+                {slide.subtitle && <h3>Hire a pool company you can trust</h3>}
+                {slide.text && (
+                  <p>
+                    FloPool is the preferred pool service and repair company for
+                    residential and commercial pool owners throughout South
+                    Miami. We are licensed and insured, so you know you're
+                    hiring a pool service company that looks after you.
+                  </p>
+                )}
+                {slide.link.enabled && (
+                  <Link
+                    className="btn btn-lg btn-warning mb-2"
+                    to={slide.link.url}
+                  >
+                    {slide.link.text}
+                  </Link>
+                )}
+              </Container>
+            </Carousel.Caption>
+          </Carousel.Item>
+        );
+      })}
     </Carousel>
   );
 };
 
 export default MainCarousel;
 
+const artDirected = css`
+  width: 100%;
+  // width: 1920px;
+  // height: 800px;
+  @media screen and (min-width: 2000px) {
+    // width: 2560px;
+    height: 900px;
+  }
+  @media screen and (max-width: 992px) {
+    height: 60vw;
+  }
+`;
+
 const carouselCSS = css`
   .carousel-caption {
     text-align: center;
     bottom: auto;
     left: 10%;
-    top: 18%;
-    width: 45%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40%;
     background-color: #007bff;
     border-radius: 0.25rem;
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
   }
 
   .carousel-caption h2 {
+    font-family: "Lilita One";
     text-transform: uppercase;
     font-size: 2rem;
   }
@@ -108,12 +218,11 @@ const carouselCSS = css`
     color: #ffc107;
   }
 
-  /* lg and beyond */
+  /* xlg and beyond */
   @media screen and (min-width: 1600px) {
     .carousel-caption {
-      top: 20%;
-      left: 25%;
-      width: 28%;
+      left: 28%;
+      width: 25%;
     }
   }
 
@@ -123,19 +232,22 @@ const carouselCSS = css`
       position: relative;
       top: 0;
       left: 0;
+      transform: translateY(0%);
       width: 100%;
       text-align: center;
-      min-height: 300px;
-      padding: 1rem 0.5rem;
+      min-height: 320px;
       border-radius: 0;
-      display: flex;
-      align-items: center;
     }
 
     .carousel-control-prev,
     .carousel-control-next {
-      align-items: flex-start;
-      margin-top: 20%;
+      align-items: end;
+      z-index: 999;
+    }
+
+    .carousel-control-prev span,
+    .carousel-control-next span {
+      margin-bottom: 1rem;
     }
 
     .carousel-caption h3 {

@@ -12,6 +12,7 @@ const Jobs = () => {
           alt="Pool Service Company Jobs"
           layout="fullWidth"
           loading="eager"
+          placeholder="blurred"
         />
         <h1 className="title">We're Hiring!</h1>
       </section>

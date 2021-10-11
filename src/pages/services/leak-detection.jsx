@@ -15,6 +15,7 @@ const LeakDetection = () => {
           alt="FloPool provides the best pool leak detection services in Miami, Florida"
           layout="fullWidth"
           loading="eager"
+          placeholder="blurred"
         />
         <h1 className="title">Pool Leak Detection Service</h1>
       </section>

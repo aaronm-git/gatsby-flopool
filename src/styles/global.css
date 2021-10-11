@@ -21,17 +21,19 @@ body {
 }
 
 .title {
+  font-family: "Lilita One";
   padding-top: 1rem;
   padding-bottom: 1rem;
   margin-bottom: 1rem;
-  font-size: 28px;
+  font-size: 2rem;
+  color: #007bff;
   border-top: 2px #ffc107 solid;
   border-bottom: 2px #ffc107 solid;
   text-transform: uppercase;
 }
 
 .subtitle {
-  font-size: 24px;
+  font-size: 1.3rem;
   font-weight: lighter;
   border-bottom: 1px #ffc107 solid;
   padding-bottom: 0.5rem;
@@ -86,8 +88,8 @@ a svg {
 
 .core-services .service::before {
   content: "";
-  -webkit-mask: url("../images/check.svg");
-  mask: url("../images/check.svg");
+  -webkit-mask: url("/check.svg");
+  mask: url("/check.svg");
   -webkit-mask-size: cover;
   background-color: rgb(6, 185, 0);
   margin-right: 0.5rem;

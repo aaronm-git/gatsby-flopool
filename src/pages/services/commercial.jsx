@@ -15,6 +15,7 @@ const Commercial = () => {
           alt="FloPool provides the best commercial pool services in Miami, Florida"
           layout="fullWidth"
           loading="eager"
+          placeholder="blurred"
         />
         <h1 className="title">Commercial Pool Service</h1>
       </section>

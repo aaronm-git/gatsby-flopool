@@ -16,6 +16,7 @@ const Residential = () => {
           alt="FloPool provides the best residential pool services in Miami, Florida"
           layout="fullWidth"
           loading="eager"
+          placeholder="blurred"
         />
         <h1 className="title">Residential Pool Service</h1>
       </section>

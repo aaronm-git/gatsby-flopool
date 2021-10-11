@@ -14,6 +14,7 @@ const Repair = () => {
           alt="FloPool provides the best pool equipment repair services in Miami, Florida"
           layout="fullWidth"
           loading="eager"
+          placeholder="blurred"
         />
         <h1 className="title">Pool Equipment Repair Service</h1>
       </section>

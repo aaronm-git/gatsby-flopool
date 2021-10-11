@@ -25,6 +25,7 @@ const ContactUs = () => {
           alt="Contact us for all your pool service needs in Miami, Florida"
           layout="fullWidth"
           loading="eager"
+          placeholder="blurred"
         />
         <h1 className="title">Contact Us Today</h1>
       </section>

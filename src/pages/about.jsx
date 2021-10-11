@@ -25,6 +25,7 @@ const About = () => {
           alt="Learn more about FloPool and why we're the best pool service in Miami, Florida"
           layout="fullWidth"
           loading="eager"
+          placeholder="blurred"
         />
         <h1 className="title">About Our Company</h1>
       </section>
