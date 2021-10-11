@@ -26,7 +26,7 @@ body {
   padding-bottom: 1rem;
   margin-bottom: 1rem;
   font-size: 2rem;
-  color: #007bff;
+  /* color: #007bff; */
   border-top: 2px #ffc107 solid;
   border-bottom: 2px #ffc107 solid;
   text-transform: uppercase;
