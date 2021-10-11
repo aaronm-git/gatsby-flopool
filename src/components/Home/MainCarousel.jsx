@@ -4,41 +4,65 @@ import { Carousel, Container } from "react-bootstrap";
 import { GatsbyImage, getImage, withArtDirection } from "gatsby-plugin-image";
 import { Link, graphql, useStaticQuery } from "gatsby";
 
-const slides = [
-  {
-    imgName: "best_pool_service_miami",
-    imgAlt: "We are the best pool service company in Miami, FL",
-    title: "Miami's Best Pool Service Company",
-    subtitle: "",
-    text: `FloPool is the preferred pool service and repair company
-    for residential and commercial pool owners throughout South Miami.
-    We are licensed and insured, so you know you're hiring a pool 
-    service company that looks after you.`,
-    imgUrl: "/get-a-quote",
-    link: {
-      enabled: true,
-      text: "Get A Quote",
-      url: "/get-a-quote",
-    },
-  },
-  {
-    imgName: "swimming_pool_equipment_repair",
-    imgAlt: "We are the best pool service company in Miami, FL",
-    title: "Professional Pool Equipment Installation and Repair",
-    subtitle: "",
-    text: `We install, service and repair all brand-name pool and spa
-    equipment. From pumps and filters to heaters and salt systems, our
-    licensed experts can handle it.`,
-    imgUrl: "/get-a-quote",
-    link: {
-      enabled: true,
-      text: "Get A Quote",
-      url: "/get-a-quote",
-    },
-  },
-];
-
 const MainCarousel = () => {
+  const slides = [
+    {
+      imgName: "best_pool_service_miami",
+      imgAlt: "We are the best pool service company in Miami, FL",
+      title: "Miami's Best Pool Service Company",
+      subtitle: "",
+      text: `FloPool is the preferred pool service and repair company
+      for residential and commercial pool owners throughout South Miami.
+      We are licensed and insured, so you know you're hiring a pool 
+      service company that looks after you.`,
+      imgUrl: "/get-a-quote",
+      btnLinks: [
+        {
+          text: "Get A Quote",
+          url: "/get-a-quote",
+          btnClass: "btn-warning",
+        },
+      ],
+    },
+    {
+      imgName: "swimming_pool_equipment_repair",
+      imgAlt: "We are the best pool service company in Miami, FL",
+      title: "Professional Pool Equipment Installation and Repair",
+      subtitle: "",
+      text: `We install, service and repair all brand-name pool and spa
+      equipment. From pumps and filters to heaters and salt systems, our
+      licensed experts can handle it.`,
+      imgUrl: "/get-a-quote",
+      btnLinks: [
+        {
+          text: "Get A Quote",
+          url: "/get-a-quote",
+          btnClass: "btn-warning",
+        },
+      ],
+    },
+    {
+      imgName: "green_pool_restoration_service",
+      imgAlt: "Green Pool Restoration Services In Miami",
+      title: "Green Pool Restoration Service",
+      // subtitle: "We'll restore your green swimming pool back",
+      text: "Maintaing a healthy blue is no easy task, especially under Miami's sunny weather. The sun helps algie thrive and deminishes chlorine levels. So when your pools is not treated properly, your pool can turn green fast. FloPool provides a green pool restoration service to prevent and restore green pools.",
+      imgUrl: "/get-a-quote",
+      btnLinks: [
+        {
+          text: "Get A Quote",
+          url: "/get-a-quote",
+          btnClass: "btn-warning",
+        },
+        // {
+        //   text: "Learn More",
+        //   url: "/services/green-pool-restoration",
+        //   btnClass: "btn-outline-light",
+        // },
+      ],
+    },
+  ];
+
   const SliderImageQuery = graphql`
     {
       sm: allFile(
@@ -143,7 +167,7 @@ const MainCarousel = () => {
   };
   return (
     <Carousel id="maincarousel" css={carouselCSS}>
-      {slides.map((slide) => {
+      {slides.map((slide, i) => {
         return (
           <Carousel.Item key={slide.imgName}>
             <Link to={slide.imgUrl}>
@@ -152,23 +176,20 @@ const MainCarousel = () => {
             <Carousel.Caption>
               <Container>
                 {slide.title && <h2>{slide.title}</h2>}
-                {slide.subtitle && <h3>Hire a pool company you can trust</h3>}
-                {slide.text && (
-                  <p>
-                    FloPool is the preferred pool service and repair company for
-                    residential and commercial pool owners throughout South
-                    Miami. We are licensed and insured, so you know you're
-                    hiring a pool service company that looks after you.
-                  </p>
-                )}
-                {slide.link.enabled && (
-                  <Link
-                    className="btn btn-lg btn-warning mb-2"
-                    to={slide.link.url}
-                  >
-                    {slide.link.text}
-                  </Link>
-                )}
+                {slide.subtitle && <h3>{slide.subtitle}</h3>}
+                {slide.text && <p>{slide.text}</p>}
+                {slide.btnLinks.length &&
+                  slide.btnLinks.map((btn, t) => {
+                    return (
+                      <Link
+                        className={"btn btn-lg mb-2 mr-2 " + btn.btnClass}
+                        to={btn.url}
+                        key={i + "-maincarouselbtn-" + t}
+                      >
+                        {btn.text}
+                      </Link>
+                    );
+                  })}
               </Container>
             </Carousel.Caption>
           </Carousel.Item>
