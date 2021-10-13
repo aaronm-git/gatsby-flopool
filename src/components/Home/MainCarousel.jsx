@@ -11,10 +11,7 @@ const MainCarousel = () => {
       imgAlt: "We are the best pool service company in Miami, FL",
       title: "Miami's Best Pool Service Company",
       subtitle: "",
-      text: `FloPool is the preferred pool service and repair company
-      for residential and commercial pool owners throughout South Miami.
-      We are licensed and insured, so you know you're hiring a pool 
-      service company that looks after you.`,
+      text: "FloPool is the preferred pool service and repair company for residential and commercial pool owners throughout South Miami. We are licensed and insured, so you know you're hiring a team of experts who are looking out for you!",
       imgUrl: "/get-a-quote",
       btnLinks: [
         {
@@ -29,9 +26,7 @@ const MainCarousel = () => {
       imgAlt: "We are the best pool service company in Miami, FL",
       title: "Professional Pool Equipment Installation and Repair",
       subtitle: "",
-      text: `We install, service and repair all brand-name pool and spa
-      equipment. From pumps and filters to heaters and salt systems, our
-      licensed experts can handle it.`,
+      text: "We install, service, and repair all brand-name pool and spa equipment. From pumps and filters to heaters and salt systems, our experts can handle it.",
       imgUrl: "/get-a-quote",
       btnLinks: [
         {
@@ -46,7 +41,7 @@ const MainCarousel = () => {
       imgAlt: "Green Pool Restoration Services In Miami",
       title: "Green Pool Restoration Service",
       // subtitle: "We'll restore your green swimming pool back",
-      text: "Maintaing a healthy blue is no easy task, especially under Miami's sunny weather. The sun helps algie thrive and deminishes chlorine levels. So when your pools is not treated properly, your pool can turn green fast. FloPool provides a green pool restoration service to prevent and restore green pools.",
+      text: "Maintaining a healthy blue swimming pool is no easy task, especially under Miami's sunny weather. The sun helps algae thrive and decreases chlorine levels. So when your pool is not treated properly, it can turn green fast. FloPool provides a green pool restoration service to prevent and restore green pools.",
       imgUrl: "/get-a-quote",
       btnLinks: [
         {
