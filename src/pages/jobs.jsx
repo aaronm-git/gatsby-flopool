@@ -19,11 +19,11 @@ const Jobs = () => {
       <section className="subsection">
         <Container>
           <Row>
-            <Col md={{ span: 6, offset: 2 }}>
+            <Col md={{ span: 6, offset: 3 }}>
               <Card className="shadow">
                 <Card.Body>
                   <BriefcaseFill className="mr-2 mb-1" />
-                  No Jobs Avaialble Now. Check Back Soon!
+                  No jobs available at this time. Check back later.
                 </Card.Body>
               </Card>
             </Col>

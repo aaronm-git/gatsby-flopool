@@ -31,7 +31,7 @@ const Footer = () => {
               <hr className="bg-warning" />
               <ul>
                 <li>
-                  <strong>Miami, FL. Office</strong>
+                  <strong>South Miami Office</strong>
                 </li>
                 <li>Mon-Sat: 8:30 AM – 6 PM</li>
                 <li>Sunday: 10 AM – 4 PM</li>
