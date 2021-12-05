@@ -73,18 +73,19 @@ const Header = () => {
               </Link> */}
               <div className="ml-lg-4" css={mobileCSS}>
                 <Row>
-                  <a
-                    href="tel:3052537665"
-                    className="btn btn-warning flex-fill d-lg-none flex-fill mx-1"
-                  >
-                    <TelephoneFill /> Call Today
-                  </a>
                   <Link
                     to="/get-a-quote"
                     className="btn btn-primary flex-fill mx-1"
                   >
                     Get A Quote
                   </Link>
+                  <a
+                    href="tel:3052537665"
+                    className="btn btn-warning flex-fill flex-fill mx-1"
+                  >
+                    <TelephoneFill />
+                    Call Now
+                  </a>
                 </Row>
               </div>
             </Nav>

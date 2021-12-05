@@ -1,11 +1,27 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/react";
-import { Carousel, Container } from "react-bootstrap";
+import { Carousel, Container, Button } from "react-bootstrap";
 import { GatsbyImage, getImage, withArtDirection } from "gatsby-plugin-image";
 import { Link, graphql, useStaticQuery } from "gatsby";
 
 const MainCarousel = () => {
   const slides = [
+    {
+      imgName: "holiday_pool_service",
+      imgAlt: "Pool service in Miami",
+      title: "Enjoy the holiday by the pool",
+      subtitle: "Family and friends coming over for the holidays?",
+      text: "FloPool can help maintain a safe and clean swimming pool for you and your guests. We are a licensed and insured company that specializes in weekly pool maintenance in Coral Gables, Cutler Bay, Pinecrest, Palmetto Bay, West Kendall, and more",
+      imgUrl: "/get-a-quote",
+      btnLinks: [
+        <Button variant="light" href="tel:3052537665">
+          Call Now
+        </Button>,
+        <Link to="/get-a-quote" className="btn btn-warning">
+          Get A Quote
+        </Link>,
+      ],
+    },
     {
       imgName: "best_pool_service_miami",
       imgAlt: "We are the best pool service company in Miami, FL",
@@ -14,11 +30,9 @@ const MainCarousel = () => {
       text: "FloPool is the preferred pool service and repair company for residential and commercial pool owners throughout South Miami. We are licensed and insured, so you know you're hiring a team of experts who are looking out for you!",
       imgUrl: "/get-a-quote",
       btnLinks: [
-        {
-          text: "Get A Quote",
-          url: "/get-a-quote",
-          btnClass: "btn-warning",
-        },
+        <Link to="/get-a-quote" className="btn btn-warning">
+          Get A Quote
+        </Link>,
       ],
     },
     {
@@ -29,11 +43,9 @@ const MainCarousel = () => {
       text: "We install, service, and repair all brand-name pool and spa equipment. From pumps and filters to heaters and salt systems, our experts can handle it.",
       imgUrl: "/get-a-quote",
       btnLinks: [
-        {
-          text: "Get A Quote",
-          url: "/get-a-quote",
-          btnClass: "btn-warning",
-        },
+        <Link to="/get-a-quote" className="btn btn-warning">
+          Get A Quote
+        </Link>,
       ],
     },
     {
@@ -44,86 +56,13 @@ const MainCarousel = () => {
       text: "Maintaining a healthy blue swimming pool is no easy task, especially under Miami's sunny weather. The sun helps algae thrive and decreases chlorine levels. So when your pool is not treated properly, it can turn green fast. FloPool provides a green pool restoration service to prevent and restore green pools.",
       imgUrl: "/get-a-quote",
       btnLinks: [
-        {
-          text: "Get A Quote",
-          url: "/get-a-quote",
-          btnClass: "btn-warning",
-        },
-        // {
-        //   text: "Learn More",
-        //   url: "/services/green-pool-restoration",
-        //   btnClass: "btn-outline-light",
-        // },
+        <Link to="/get-a-quote" className="btn btn-warning">
+          Get A Quote
+        </Link>,
       ],
     },
   ];
 
-  const SliderImageQuery = graphql`
-    {
-      sm: allFile(
-        filter: {
-          relativeDirectory: { eq: "home_slides" }
-          childImageSharp: { original: { width: { eq: 1000 } } }
-        }
-      ) {
-        edges {
-          node {
-            childImageSharp {
-              gatsbyImageData(
-                jpgOptions: { progressive: true }
-                placeholder: BLURRED
-                quality: 100
-              )
-            }
-            name
-            id
-          }
-        }
-      }
-      lg: allFile(
-        filter: {
-          relativeDirectory: { eq: "home_slides" }
-          childImageSharp: { original: { width: { eq: 2560 } } }
-        }
-        sort: { fields: name, order: ASC }
-      ) {
-        edges {
-          node {
-            childImageSharp {
-              gatsbyImageData(
-                jpgOptions: { progressive: true }
-                placeholder: BLURRED
-                quality: 100
-              )
-            }
-            name
-            id
-          }
-        }
-      }
-      normal: allFile(
-        filter: {
-          relativeDirectory: { eq: "home_slides" }
-          childImageSharp: { original: { width: { eq: 1920 } } }
-        }
-        sort: { fields: name, order: ASC }
-      ) {
-        edges {
-          node {
-            childImageSharp {
-              gatsbyImageData(
-                jpgOptions: { progressive: true }
-                placeholder: BLURRED
-                quality: 100
-              )
-            }
-            name
-            id
-          }
-        }
-      }
-    }
-  `;
   const data = useStaticQuery(SliderImageQuery);
   const SlideImages = ({ imgName, imgAlt }) => {
     const smImgNodeIndex = data.sm.edges.findIndex(
@@ -137,8 +76,8 @@ const MainCarousel = () => {
     );
 
     const small = data.sm.edges[smImgNodeIndex].node;
-    const large = data.lg.edges[lgImgNodeIndex].node;
     const normal = data.normal.edges[normalImgNodeIndex].node;
+    const large = data.lg.edges[lgImgNodeIndex].node;
 
     const images = withArtDirection(getImage(normal), [
       {
@@ -150,15 +89,7 @@ const MainCarousel = () => {
         image: getImage(large),
       },
     ]);
-    return (
-      <GatsbyImage
-        image={images}
-        alt={imgAlt}
-        css={artDirected}
-        // className="w-100"
-        // imgClassName="img-fluid"
-      />
-    );
+    return <GatsbyImage image={images} alt={imgAlt} css={artDirected} />;
   };
   return (
     <Carousel id="maincarousel" css={carouselCSS}>
@@ -173,18 +104,11 @@ const MainCarousel = () => {
                 {slide.title && <h2>{slide.title}</h2>}
                 {slide.subtitle && <h3>{slide.subtitle}</h3>}
                 {slide.text && <p>{slide.text}</p>}
-                {slide.btnLinks.length &&
-                  slide.btnLinks.map((btn, t) => {
-                    return (
-                      <Link
-                        className={"btn btn-lg mb-2 mr-2 " + btn.btnClass}
-                        to={btn.url}
-                        key={i + "-maincarouselbtn-" + t}
-                      >
-                        {btn.text}
-                      </Link>
-                    );
-                  })}
+                {slide.btnLinks.map((btn, index) => (
+                  <span key={"carouselBtn" + index} className="mx-1">
+                    {btn}
+                  </span>
+                ))}
               </Container>
             </Carousel.Caption>
           </Carousel.Item>
@@ -196,16 +120,84 @@ const MainCarousel = () => {
 
 export default MainCarousel;
 
+const SliderImageQuery = graphql`
+  {
+    sm: allFile(
+      filter: {
+        relativeDirectory: { eq: "home_slides" }
+        childImageSharp: { original: { width: { eq: 1000 } } }
+      }
+    ) {
+      edges {
+        node {
+          childImageSharp {
+            gatsbyImageData(
+              jpgOptions: { progressive: true }
+              placeholder: BLURRED
+              quality: 100
+            )
+          }
+          name
+          id
+        }
+      }
+    }
+    lg: allFile(
+      filter: {
+        relativeDirectory: { eq: "home_slides" }
+        childImageSharp: { original: { width: { eq: 2560 } } }
+      }
+      sort: { fields: name, order: ASC }
+    ) {
+      edges {
+        node {
+          childImageSharp {
+            gatsbyImageData(
+              jpgOptions: { progressive: true }
+              placeholder: BLURRED
+              quality: 100
+            )
+          }
+          name
+          id
+        }
+      }
+    }
+    normal: allFile(
+      filter: {
+        relativeDirectory: { eq: "home_slides" }
+        childImageSharp: { original: { width: { eq: 1920 } } }
+      }
+      sort: { fields: name, order: ASC }
+    ) {
+      edges {
+        node {
+          childImageSharp {
+            gatsbyImageData(
+              jpgOptions: { progressive: true }
+              placeholder: BLURRED
+              quality: 100
+            )
+          }
+          name
+          id
+        }
+      }
+    }
+  }
+`;
+
 const artDirected = css`
-  width: 100%;
-  // width: 1920px;
-  // height: 800px;
   @media screen and (min-width: 2000px) {
-    // width: 2560px;
     height: 900px;
   }
-  @media screen and (max-width: 992px) {
-    height: 60vw;
+
+  @media screen and (min-width: 600px) and (max-width: 992px) {
+    height: 400px;
+  }
+
+  @media screen and (max-width: 600px) {
+    height: 250px;
   }
 `;
 
