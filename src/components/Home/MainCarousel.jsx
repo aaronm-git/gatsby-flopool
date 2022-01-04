@@ -7,17 +7,28 @@ import { Link, graphql, useStaticQuery } from "gatsby";
 const MainCarousel = () => {
   const slides = [
     {
-      imgName: "holiday_pool_service",
-      imgAlt: "Pool service in Miami",
-      title: "Enjoy the holiday by the pool",
-      subtitle: "Family and friends coming over for the holidays?",
-      text: "FloPool can help maintain a safe and clean swimming pool for you and your guests. We are a licensed and insured company that specializes in weekly pool maintenance in Coral Gables, Cutler Bay, Pinecrest, Palmetto Bay, West Kendall, and more",
+      imgName: "2022",
+      imgAlt: "Happy New Years from the FloPool team",
+      title: (
+        <span>
+          WELCOME 2022 WITH <span class="text-nowrap">WORLD-CLASS</span> POOL
+          SERVICE
+        </span>
+      ),
+      subtitle: "",
+      text: (
+        <span>
+          Start the new year with a clean swimming pool. FloPool specializes in
+          weekly pool service for residential and commercial pools. Call today
+          for a <strong>FREE</strong> pool service quote.
+        </span>
+      ),
       imgUrl: "/get-a-quote",
       btnLinks: [
-        <Button variant="light" href="tel:3052537665">
+        <Button variant="light" size="lg" href="tel:3052537665">
           Call Now
         </Button>,
-        <Link to="/get-a-quote" className="btn btn-warning">
+        <Link to="/get-a-quote" className="btn btn-warning btn-lg">
           Get A Quote
         </Link>,
       ],
@@ -30,7 +41,7 @@ const MainCarousel = () => {
       text: "FloPool is the preferred pool service and repair company for residential and commercial pool owners throughout South Miami. We are licensed and insured, so you know you're hiring a team of experts who are looking out for you!",
       imgUrl: "/get-a-quote",
       btnLinks: [
-        <Link to="/get-a-quote" className="btn btn-warning">
+        <Link to="/get-a-quote" className="btn btn-warning btn-lg">
           Get A Quote
         </Link>,
       ],
@@ -43,7 +54,7 @@ const MainCarousel = () => {
       text: "We install, service, and repair all brand-name pool and spa equipment. From pumps and filters to heaters and salt systems, our experts can handle it.",
       imgUrl: "/get-a-quote",
       btnLinks: [
-        <Link to="/get-a-quote" className="btn btn-warning">
+        <Link to="/get-a-quote" className="btn btn-warning btn-lg">
           Get A Quote
         </Link>,
       ],
@@ -56,7 +67,7 @@ const MainCarousel = () => {
       text: "Maintaining a healthy blue swimming pool is no easy task, especially under Miami's sunny weather. The sun helps algae thrive and decreases chlorine levels. So when your pool is not treated properly, it can turn green fast. FloPool provides a green pool restoration service to prevent and restore green pools.",
       imgUrl: "/get-a-quote",
       btnLinks: [
-        <Link to="/get-a-quote" className="btn btn-warning">
+        <Link to="/get-a-quote" className="btn btn-warning btn-lg">
           Get A Quote
         </Link>,
       ],
@@ -93,7 +104,7 @@ const MainCarousel = () => {
   };
   return (
     <Carousel id="maincarousel" css={carouselCSS}>
-      {slides.map((slide, i) => {
+      {slides.map((slide) => {
         return (
           <Carousel.Item key={slide.imgName}>
             <Link to={slide.imgUrl}>
