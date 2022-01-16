@@ -113,7 +113,7 @@ const Footer = () => {
       </section>
       <section className="bg-warning text-dark py-2 text-center">
         <small className="d-block">
-          FloPool is fully licensed and insured.
+          Florida Swimming Pools LLC is fully licensed and insured.
         </small>
         <small className="d-block">
           Master Swimming Pool Maintenance Unlimited - Certified Contractor for
@@ -133,7 +133,9 @@ const Footer = () => {
           <br />
           <small>
             Designed by{" "}
-            <a href="https://www.aaronmolina.me">www.aaronmolina.me</a>
+            <a href="https://www.aaronmolina.me" target="_blank" rel="noopener">
+              www.aaronmolina.me
+            </a>
           </small>
         </Container>
       </section>

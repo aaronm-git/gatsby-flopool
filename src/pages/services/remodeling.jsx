@@ -3,11 +3,11 @@ import Layout from "../../components/layouts/Main";
 import { Container, Row, Col } from "react-bootstrap";
 import { StaticImage } from "gatsby-plugin-image";
 import ContactNetlify from "../../components/ContactNetlify";
-import SEOComponent from "../../components/SEO";
+import SeoComponent from "../../components/SEO";
 const Remodeling = () => {
   return (
     <Layout>
-      <SEOComponent title="Pool & Deck Remodeling" />
+      <SeoComponent title="We are licensed and insured pool & deck construction and remodeling contractors." />
       <section className="hero">
         <StaticImage
           src="../../images/services/hero-remodeling.jpg"
@@ -31,7 +31,7 @@ const Remodeling = () => {
             </Col>
             <Col md={6}>
               <h4 className="subtitle text-primary">
-                Pool and Deck Remodeling Services{" "}
+                Pool and Deck Remodeling Services
               </h4>
               <p>
                 Is your pool looking old and in need of a facelift, or perhaps
@@ -47,12 +47,12 @@ const Remodeling = () => {
               </h4>
               <p>
                 Here in sunny south Florida, we understand the benefit of owning
-                a swimming pool. It's a great relaxation spot, brngs family
+                a swimming pool. It's a great relaxation spot, brings family
                 together, and increases property value. But sometimes all we can
                 to is dream of what could be ove that empty plot of grass. We
                 want to help you make your dreams a reality. FloPool works with
                 a variety of professional contractors who work hard to provide
-                Floridians with a beautiful crystal clearn invesntment. We
+                Floridians with a beautiful crystal clear investment. We
                 specialize in custom in-ground pool construction as well as
                 renovations and repair. From the initial design phase through
                 construction, our qualified team of experts will guide you

@@ -3,11 +3,11 @@ import Layout from "../../components/layouts/Main";
 import { Container, Row, Col } from "react-bootstrap";
 import { StaticImage } from "gatsby-plugin-image";
 import ContactNetlify from "../../components/ContactNetlify";
-import SEOComponent from "../../components/SEO";
+import SeoComponent from "../../components/SEO";
 const Repair = () => {
   return (
     <Layout>
-      <SEOComponent title="Pool Equipment Installation & Repair" />
+      <SeoComponent title="Our experienced and trained pool technicians provide the best pool & spa equipment repair service in South Miami, FL." />
       <section className="hero">
         <StaticImage
           src="../../images/services/hero-repair.jpg"
@@ -29,27 +29,6 @@ const Repair = () => {
                 We are fully licensed to repair and install all types of pool
                 equipment for residential and commercial residencies.
               </p>
-              <div className="rounded bg-light p-2 shadow-sm mb-3">
-                <p className="h5 font-weight-light text-primary mb-3">
-                  Our pool repair and installation service include:
-                </p>
-                <Row>
-                  <Col>
-                    <ul className="mb-0">
-                      <li>Pool Pumps</li>
-                      <li>Pool Filter</li>
-                      <li>Pool Cleaners</li>
-                    </ul>
-                  </Col>
-                  <Col>
-                    <ul>
-                      <li>Pool salt systems</li>
-                      <li>Pool lights</li>
-                      <li>and more!</li>
-                    </ul>
-                  </Col>
-                </Row>
-              </div>
               <p>
                 All of the FloPool team of trained pool technicians has the
                 experience and skills necessary to diagnose and repair your pool
@@ -57,6 +36,27 @@ const Repair = () => {
                 and we'll accurately and swiftly troubleshoot and repair your
                 equipment.
               </p>
+              <div className="rounded bg-light p-2 shadow-sm mb-3">
+                <p className="h5 font-weight-light text-primary mb-3">
+                  Our pool repair and installation service include:
+                </p>
+                <Row>
+                  <Col>
+                    <ul className="mb-0 core-services">
+                      <li className="service">Pool Pumps</li>
+                      <li className="service">Pool Filter</li>
+                      <li className="service">Pool Cleaners</li>
+                    </ul>
+                  </Col>
+                  <Col>
+                    <ul className="core-services">
+                      <li className="service">Pool salt systems</li>
+                      <li className="service">Pool lights</li>
+                      <li className="service">and more!</li>
+                    </ul>
+                  </Col>
+                </Row>
+              </div>
               <p>
                 A lot of the time we can do the repairs at your property, but in
                 some cases we may need to take the equipment for a full

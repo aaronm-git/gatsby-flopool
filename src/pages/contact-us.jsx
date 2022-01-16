@@ -4,7 +4,7 @@ import { Container, Row, Col, ListGroup } from "react-bootstrap";
 import { StaticImage } from "gatsby-plugin-image";
 import { TelephoneFill } from "react-bootstrap-icons";
 import ContactNetlify from "../components/ContactNetlify";
-import SEOComponent from "../components/SEO";
+import SeoComponent from "../components/SEO";
 
 const bottomOverlayStyle = {
   position: "absolute",
@@ -18,7 +18,7 @@ const bottomOverlayStyle = {
 const ContactUs = () => {
   return (
     <Layout>
-      <SEOComponent title="Contact page" />
+      <SeoComponent title="Contact page" />
       <section className="hero">
         <StaticImage
           src="../images/contact-us/hero.jpg"
@@ -39,8 +39,8 @@ const ContactUs = () => {
                 you. At FloPool, we value your comments. It is you the
                 consumers, who have made us a leading Miami Pool Service
                 provider, serving all of South Miami, including areas like
-                Kendal, Pinecrest, Coral Gables, Gables by the Sea, and Palmetto
-                Bay. If you have a pool, we would love to maintain it!
+                Kendall, Pinecrest, Coral Gables, Gables by the Sea, and
+                Palmetto Bay. If you have a pool, we would love to maintain it!
               </p>
               <ListGroup className="shadow-sm">
                 <ListGroup.Item>

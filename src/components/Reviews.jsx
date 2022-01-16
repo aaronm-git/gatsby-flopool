@@ -97,7 +97,6 @@ const componentCSS = css`
   .card {
     position: relative;
     height: 300px;
-    overflow: scroll;
   }
 
   .card .header {

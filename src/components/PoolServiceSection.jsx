@@ -4,7 +4,7 @@ import { StaticImage } from "gatsby-plugin-image";
 
 const PoolServiceSection = () => {
   return (
-    <section id="cooreservices" className="subsection bg-light">
+    <section className="subsection bg-light">
       <Container>
         <Row className="flex-lg-row-reverse">
           <Col md={6}>

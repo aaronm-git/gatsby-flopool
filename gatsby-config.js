@@ -4,10 +4,10 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: "FloPool",
-    titleTemplate: "%s · Miami's Best Pool Service Company",
+    title: "We are the best pool service company in South Miami, FL.",
+    titleTemplate: "FloPool · %s",
     description:
-      "Looking for a reliable pool service company? FloPool is here to meet all your swimming pool service needs in All of South Miami, Florida",
+      "FloPool is a reliable weekly pool service company located in Miami, Florida. FloPool are licensed and insured pool contractors.",
     url: "https://flopool.com", // No trailing slash allowed!
     siteUrl: "https://www.flopool.com",
     image: "/og-main.jpg", // Path to your image you placed in the 'static' folder
@@ -21,7 +21,7 @@ module.exports = {
         start_url: "/",
         background_color: "#fff",
         theme_color: "#007bff",
-        // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
+        // Enables "Add to Home screen" prompt and disables browser UI (including back button)
         // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
         display: "standalone",
         icon: "src/images/favicon.png", // This path is relative to the root of the site.
@@ -64,7 +64,7 @@ module.exports = {
       __key: "images",
     },
     {
-      resolve: `gatsby-plugin-google-gtag`,
+      resolve: "gatsby-plugin-google-gtag",
       options: {
         // You can add multiple tracking ids and a pageview event will be fired for all of them.
         trackingIds: [

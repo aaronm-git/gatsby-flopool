@@ -4,12 +4,12 @@ import { Container, Row, Col } from "react-bootstrap";
 import { StaticImage } from "gatsby-plugin-image";
 import PoolServiceSection from "../../components/PoolServiceSection";
 import ContactNetlify from "../../components/ContactNetlify";
-import SEOComponentt from "../../components/SEO";
+import SeoComponent from "../../components/SEO";
 
 const Residential = () => {
   return (
     <Layout>
-      <SEOComponentt title="Residential Pool Service" />
+      <SeoComponent title="We specialize in providing the best weekly pool services in South Miami, FL." />
       <section className="hero">
         <StaticImage
           src="../../images/services/hero-residential.jpg"
@@ -40,7 +40,7 @@ const Residential = () => {
                 We recommend cleaning your swimming pool weekly instead of every
                 other week or once a month. weekly pool cleaning is the golden
                 standard in South Florida. Our year-long sunny weather means
-                that one week without service may lead to unecessary use of
+                that one week without service may lead to unnecessary use of
                 higher dosages of chemicals to compensate for the casual pool
                 service routine, which will be expensive.
               </p>
